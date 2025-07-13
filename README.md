@@ -1,5 +1,59 @@
 # FlashcardsApp
 
+## ✅ Why These Questions Are Great for Interviews
+## 🔹 Angular / React Questions
+Cover essential framework concepts (components, lifecycle, routing, forms, RxJS/hooks)
+
+Interviewers often ask about:
+
+Difference between template-driven and reactive forms
+
+Component communication (@Input, @Output, context, props)
+
+Routing/navigation and programmatic control
+
+Structural directives or JSX patterns
+
+RxJS / useEffect logic (real interview pain points)
+
+## 🔹 Java Core
+Questions like:
+
+What is garbage collection?
+
+What’s the difference between an interface and abstract class?
+
+What is multithreading, and how do you synchronize threads?
+
+What are collections, and how do you choose between ArrayList and LinkedList?
+
+These hit the heart of what Java interviews test.
+
+## 🔹 Design Principles
+MVC, Dependency Injection, and modularity questions show architecture-level thinking
+
+Knowing these puts you in a higher bracket (e.g., senior or systems-oriented roles)
+
+## 🔹 Algorithms & Data Structures
+Essential for any coding interview (LeetCode-style problems often revolve around trees, graphs, recursion, etc.)
+
+## 🔹 Tooling
+Questions on Angular CLI, React dev tools, Java build tools (Maven/Gradle) are helpful bonus points.
+
+## 🧠 Tip: Interviewers Are Looking For
+```
+Category	What They Look For
+Knowledge	You understand the frameworks, syntax, and API behavior
+Problem Solving	You can apply what you know to real-world or whiteboard scenarios
+Communication	You explain concepts like DI or GC clearly and confidently
+Practicality	You write code efficiently and follow best practices (e.g., not leaking memory)
+
+```
+
+
+
+
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
 
 ## Development server

@@ -1,0 +1,21 @@
+
+<!--
+<div class="flashcard" (click)="toggleCard()">
+  <p *ngIf="!showAnswer"><strong>Q:</strong> {{ flashcard.question }}</p>
+  <p *ngIf="showAnswer"><strong>A:</strong> {{ flashcard.answer }}</p>
+</div>
+-->
+
+<div class="card-container" (click)="toggleCard()">
+  <div class="card" [class.flipped]="showAnswer">
+    <div class="card-front">
+    <div class="w-100 d-flex justify-content-between align-items-start">
+        <span><strong>Q:</strong> {{ flashcard.question }}</span>
+        <span class="badge" [ngClass]="['bg-' + flashcard.color]">{{ flashcard.difficulty | titlecase }}</span>
+    </div>
+    </div>
+    <div class="card-back">
+      <p><strong>A:</strong> <span [innerHTML]="flashcard.answer"></span></p>
+    </div>
+  </div>
+</div>

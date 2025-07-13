@@ -1,0 +1,107 @@
+[
+  {
+    "topic": "Java",
+    "question": "What is garbage collection in Java?",
+    "answer": "An <strong>automatic process</strong> that <u>frees</u> memory by <u>removing</u> <strong>objects</strong> that are no longer <u>reachable</u>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java",
+    "question": "What is the difference between JDK, JRE, and JVM?",
+    "answer": "<code>JVM</code> <u>runs</u> <strong>Java bytecode</strong>, <code>JRE</code> includes <code>JVM</code> and <strong>libraries</strong>, <code>JDK</code> includes <code>JRE</code> and <strong>development tools</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java",
+    "question": "What are Java Collections?",
+    "answer": "<strong>Frameworks</strong> like <code>List</code>, <code>Set</code>, and <code>Map</code> that <u>store</u> and <u>manipulate</u> groups of <strong>objects</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java",
+    "question": "Explain the difference between ArrayList and LinkedList.",
+    "answer": "<code>ArrayList</code> <u>uses</u> a <strong>dynamic array</strong>, while <code>LinkedList</code> <u>uses</u> <strong>nodes</strong> <u>connected</u> by <strong>pointers</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java",
+    "question": "What is multithreading in Java?",
+    "answer": "<strong>Multithreading</strong> is <u>executing</u> multiple <strong>threads</strong> <u>concurrently</u> to <u>improve</u> performance.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java",
+    "question": "What is synchronization?",
+    "answer": "A <strong>technique</strong> to <u>control</u> access to <strong>shared resources</strong> among multiple <strong>threads</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java",
+    "question": "What are checked and unchecked exceptions?",
+    "answer": "<strong>Checked exceptions</strong> must be <u>declared</u> or <u>handled</u>; <strong>unchecked exceptions</strong> do not <u>require</u> declaration.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java",
+    "question": "Explain Java 8 Streams.",
+    "answer": "A <strong>fluent API</strong> to <u>process</u> sequences of <strong>elements</strong> with <strong>functional-style operations</strong> like <code>map</code>, <code>filter</code>, and <code>reduce</code>.",
+    "difficulty": "hard",
+    "color": "danger"
+  },
+  {
+    "topic": "Java",
+    "question": "What is the Java Memory Model?",
+    "answer": "Defines how <strong>threads</strong> <u>interact</u> through <strong>memory</strong> and how changes are <u>propagated</u> across them.",
+    "difficulty": "hard",
+    "color": "danger"
+  },
+  {
+    "topic": "Java",
+    "question": "What is the difference between `final`, `finally`, and `finalize`?",
+    "answer": "<code>final</code> <u>declares</u> constants or prevents overriding, <code>finally</code> <u>executes</u> after try-catch, <code>finalize()</code> is <u>called</u> by <strong>GC</strong> before object destruction.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java",
+    "question": "What is the purpose of `volatile` keyword?",
+    "answer": "<code>volatile</code> <u>ensures</u> visibility of <strong>variable changes</strong> across <strong>threads</strong>, avoiding caching issues.",
+    "difficulty": "hard",
+    "color": "danger"
+  },
+  {
+    "topic": "Java",
+    "question": "What is a Java interface?",
+    "answer": "An <strong>abstract type</strong> that <u>specifies</u> methods a class must <u>implement</u>. Supports <strong>polymorphism</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java",
+    "question": "Explain the difference between abstract class and interface.",
+    "answer": "<strong>Abstract classes</strong> can <u>have</u> method bodies, while <strong>interfaces</strong> (before Java 8) <u>define</u> methods without <u>implementation</u>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java",
+    "question": "What is autoboxing and unboxing?",
+    "answer": "<strong>Autoboxing</strong> <u>converts</u> primitives to wrapper objects automatically; <strong>unboxing</strong> <u>converts</u> wrappers back to primitives.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java",
+    "question": "What is the difference between `==` and `.equals()`?",
+    "answer": "<code>==</code> <u>compares</u> <strong>object references</strong>; <code>.equals()</code> <u>compares</u> <strong>object content</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  }
+]

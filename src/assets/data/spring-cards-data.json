@@ -1,0 +1,107 @@
+[
+  {
+    "topic": "Spring Core",
+    "question": "What is Dependency Injection in Spring?",
+    "answer": "It's a <strong>design pattern</strong> where the <strong>Spring container</strong> <u>injects</u> <strong>dependencies</strong> into a <strong>bean</strong> at runtime instead of the bean <u>creating</u> them itself.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Spring Core",
+    "question": "What is a Spring Bean?",
+    "answer": "A <strong>bean</strong> is an <strong>object</strong> that is <u>managed</u> by the <strong>Spring IoC container</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Spring Boot",
+    "question": "What does @SpringBootApplication do?",
+    "answer": "It is a <strong>convenience annotation</strong> that <u>combines</u> <code>@Configuration</code>, <code>@EnableAutoConfiguration</code>, and <code>@ComponentScan</code>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Spring Boot",
+    "question": "What is application.properties used for?",
+    "answer": "It is <u>used</u> to <u>define</u> <strong>configuration values</strong> such as <strong>port</strong>, <strong>datasource</strong>, <strong>logging levels</strong>, etc.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Spring MVC",
+    "question": "What is @RestController?",
+    "answer": "<code>@RestController</code> is a specialized <strong>version</strong> of <code>@Controller</code> that <u>combines</u> <code>@Controller</code> and <code>@ResponseBody</code>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Spring MVC",
+    "question": "How does Spring handle incoming HTTP requests?",
+    "answer": "<strong>Spring MVC</strong> <u>maps</u> <strong>requests</strong> to <strong>controller methods</strong> using <strong>annotations</strong> like <code>@RequestMapping</code>, <code>@GetMapping</code>, etc.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Spring Data JPA",
+    "question": "What is the purpose of Spring Data JPA?",
+    "answer": "It <u>simplifies</u> <strong>database access</strong> using <strong>repository interfaces</strong> and <u>automatically implements</u> <strong>CRUD operations</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Spring Data JPA",
+    "question": "What does @Entity mean?",
+    "answer": "It <u>marks</u> a <strong>class</strong> as a <strong>JPA entity</strong>, <u>representing</u> a <strong>table</strong> in the <strong>database</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Spring Security",
+    "question": "What is Spring Security?",
+    "answer": "A <strong>framework</strong> for <u>handling</u> <strong>authentication</strong> and <strong>authorization</strong> in <strong>Spring applications</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Spring Security",
+    "question": "How do you secure endpoints in Spring?",
+    "answer": "By <u>configuring</u> <code>HttpSecurity</code> and <u>using</u> <strong>annotations</strong> like <code>@PreAuthorize</code> or <code>@Secured</code>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Spring",
+    "question": "What is the role of the Spring Container?",
+    "answer": "The <strong>Spring Container</strong> <u>manages</u> the <strong>lifecycle</strong> and <strong>configuration</strong> of <strong>application objects</strong> (beans) using <strong>dependency injection</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Spring",
+    "question": "What is Dependency Injection?",
+    "answer": "<strong>DI</strong> is a <strong>design pattern</strong> where <strong>objects</strong> are <u>provided</u> with their <strong>dependencies</strong> by an external <strong>source</strong> rather than <u>creating</u> them internally. Spring <u>supports</u> <strong>constructor</strong> and <strong>setter injection</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Spring",
+    "question": "What are @Component, @Service, and @Repository annotations?",
+    "answer": "They are <strong>specializations</strong> of <code>@Component</code> <u>used</u> to <u>mark</u> <strong>beans</strong> for Spring’s <strong>component scanning</strong> with different <strong>semantics</strong> (e.g., <code>@Repository</code> for <strong>DAOs</strong>).",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Spring",
+    "question": "What is Spring Boot and how does it simplify Spring development?",
+    "answer": "<strong>Spring Boot</strong> <u>provides</u> <strong>opinionated defaults</strong>, <strong>auto-configuration</strong>, and <strong>embedded servers</strong>, <u>reducing</u> <strong>boilerplate</strong> and <u>simplifying</u> <strong>application setup</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Spring",
+    "question": "How does Spring manage transactions?",
+    "answer": "Spring <u>uses</u> <code>@Transactional</code> to <u>manage</u> <strong>transactions</strong> declaratively. It <u>integrates</u> with various <strong>transaction managers</strong> (JDBC, JPA, etc.).",
+    "difficulty": "medium",
+    "color": "warning"
+  }
+]

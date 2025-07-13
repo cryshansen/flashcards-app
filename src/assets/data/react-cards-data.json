@@ -1,0 +1,142 @@
+[
+  {
+    "topic": "Components",
+    "question": "What is a React component?",
+    "answer": "A <strong>function</strong> or <strong>class</strong> that <u>returns</u> <code>JSX</code> to <u>describe</u> what should <u>appear</u> on the <strong>screen</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Components",
+    "question": "What is the difference between a functional and class component?",
+    "answer": "<strong>Functional components</strong> are <strong>stateless</strong> (until <code>Hooks</code>), while <strong>class components</strong> have <strong>lifecycle methods</strong> and <code>this</code> context.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "JSX",
+    "question": "What is JSX?",
+    "answer": "<code>JSX</code> stands for <strong>JavaScript XML</strong>. It <u>allows</u> writing <strong>HTML-like syntax</strong> inside <strong>JavaScript code</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Props",
+    "question": "What are props in React?",
+    "answer": "<strong>Props</strong> are <strong>inputs</strong> to <strong>components</strong> that are <u>passed</u> down from <strong>parent</strong> to <strong>child</strong> and are <strong>read-only</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "State",
+    "question": "What is state in React?",
+    "answer": "<strong>State</strong> is a built-in <strong>object</strong> <u>used</u> to <u>contain</u> <strong>data</strong> about the <strong>component</strong> that can <u>change</u> over time.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "State",
+    "question": "How do you update state in a class component?",
+    "answer": "By <u>using</u> <code>this.setState({ key: value })</code>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Hooks",
+    "question": "What is the useState hook?",
+    "answer": "It <u>allows</u> you to <u>add</u> <strong>state</strong> to <strong>functional components</strong>. <code>const [count, setCount] = useState(0);</code>",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Hooks",
+    "question": "What is the useEffect hook?",
+    "answer": "It <u>performs</u> <strong>side effects</strong> in <strong>functional components</strong> (e.g., <u>fetching</u> data, <u>subscribing</u> to events).",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Hooks",
+    "question": "How do you run useEffect only once?",
+    "answer": "<u>Pass</u> an <strong>empty dependency array</strong>: <code>useEffect(() => { ... }, [])</code>",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Events",
+    "question": "How do you handle a click event in React?",
+    "answer": "<u>Attach</u> an <strong>event handler</strong> like <code>onClick={() => handleClick()}</code> in <code>JSX</code>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Forms",
+    "question": "How do you handle form input in React?",
+    "answer": "<u>Use</u> <code>useState</code> to <u>track</u> <strong>input value</strong> and <u>update</u> onChange: <code>&lt;input value={value} onChange={e =&gt; setValue(e.target.value)} /&gt;</code>",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Lifecycle",
+    "question": "What is componentDidMount?",
+    "answer": "A <strong>lifecycle method</strong> in <strong>class components</strong> that <u>runs</u> after the <strong>component</strong> is <u>mounted</u> to the <strong>DOM</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Rendering",
+    "question": "What is conditional rendering?",
+    "answer": "<u>Render</u> different <strong>UI</strong> based on <strong>conditions</strong> using a <code>ternary operator</code>, <code>if</code>, or logical <code>&&</code>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Lists & Keys",
+    "question": "Why is `key` important in a list?",
+    "answer": "<strong>Keys</strong> <u>help</u> React <u>identify</u> which <strong>items</strong> <u>changed</u>, were <u>added</u>, or <u>removed</u> for efficient <strong>updating</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Optimization",
+    "question": "What is React.memo?",
+    "answer": "<code>React.memo</code> is a <strong>higher-order component</strong> that <u>prevents</u> unnecessary <strong>re-renders</strong> if <strong>props</strong> haven't <u>changed</u>.",
+    "difficulty": "hard",
+    "color": "danger"
+  },
+  {
+    "topic": "Routing",
+    "question": "What is React Router?",
+    "answer": "A <strong>library</strong> <u>used</u> to <u>enable</u> <strong>navigation</strong> and <strong>routing</strong> in React applications.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Routing",
+    "question": "How do you navigate between pages with React Router?",
+    "answer": "<u>Use</u> <code>&lt;Link to='/about'&gt;About&lt;/Link&gt;</code> or the <code>useNavigate()</code> hook for <strong>programmatic navigation</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Context",
+    "question": "What is the Context API?",
+    "answer": "It <u>provides</u> a way to <u>pass</u> <strong>data</strong> through the <strong>component tree</strong> without <strong>props drilling</strong>.",
+    "difficulty": "hard",
+    "color": "danger"
+  },
+  {
+    "topic": "Context",
+    "question": "How do you consume context in a functional component?",
+    "answer": "By <u>using</u> the <code>useContext(MyContext)</code> <strong>hook</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Advanced",
+    "question": "What is a custom hook?",
+    "answer": "A <strong>reusable function</strong> that <u>uses</u> built-in <strong>hooks</strong> and <u>encapsulates</u> shared <strong>logic</strong> across <strong>components</strong>.",
+    "difficulty": "hard",
+    "color": "danger"
+  }
+]
