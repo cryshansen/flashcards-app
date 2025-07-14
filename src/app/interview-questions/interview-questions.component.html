@@ -4,65 +4,66 @@
   <div class="row my-5">
     <h4>🧠 Memory Strategy: Visual Grammar Cues</h4>
     <p class="lead">Visual Encoding for Memory Retention</p>
-
-    <table class="my-5 gy-5 table table-striped table-sm" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-      <thead style="background-color: #f2f2f2;">
-        <tr>
-          <th>Element Type</th>
-          <th>Example</th>
-          <th>Suggested Format</th>
-          <th>Memory Benefit</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Concepts or Terms</td>
-          <td>Components, Services, Observables</td>
-          <td><code>&lt;strong&gt;term&lt;/strong&gt;</code></td>
-          <td><strong>Emphasizes core vocabulary</strong></td>
-        </tr>
-        <tr>
-          <td>Verbs / Actions</td>
-          <td>passed, emits, fetch, bind</td>
-          <td><code>&lt;u&gt;verb&lt;/u&gt;</code></td>
-          <td><u>Highlights process / behavior</u></td>
-        </tr>
-        <tr>
-          <td>Data Flow / Direction</td>
-          <td>parent to child, child to parent</td>
-          <td><code>&lt;em&gt;phrase&lt;/em&gt;</code></td>
-          <td><em>Emphasizes pathways or interactions</em></td>
-        </tr>
-        <tr>
-          <td>Key Syntax</td>
-          <td>&#64;Input, useEffect()</td>
-          <td><code>&lt;code&gt;</code> or <code>&lt;span class="code"&gt;</code></td>
-          <td>Encodes recall of specific syntax</td>
-        </tr>
-        <tr>
-          <td>Definitions</td>
-          <td>Opening line of answer</td>
-          <td><code>&lt;blockquote&gt;</code>, <code>&lt;strong&gt;</code></td>
-          <td><strong>Triggers concept framing</strong></td>
-        </tr>
-      </tbody>
-    </table>
+    <div style="overflow-x: auto;">
+      <table class="my-5 gy-5 table table-striped table-sm" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+        <thead style="background-color: #f2f2f2;">
+          <tr>
+            <th>Element Type</th>
+            <th>Example</th>
+            <th>Suggested Format</th>
+            <th>Memory Benefit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Concepts or Terms</td>
+            <td>Components, Services, Observables</td>
+            <td><code>&lt;strong&gt;term&lt;/strong&gt;</code></td>
+            <td><strong>Emphasizes core vocabulary</strong></td>
+          </tr>
+          <tr>
+            <td>Verbs / Actions</td>
+            <td>passed, emits, fetch, bind</td>
+            <td><code>&lt;u&gt;verb&lt;/u&gt;</code></td>
+            <td><u>Highlights process / behavior</u></td>
+          </tr>
+          <tr>
+            <td>Data Flow / Direction</td>
+            <td>parent to child, child to parent</td>
+            <td><code>&lt;em&gt;phrase&lt;/em&gt;</code></td>
+            <td><em>Emphasizes pathways or interactions</em></td>
+          </tr>
+          <tr>
+            <td>Key Syntax</td>
+            <td>&#64;Input, useEffect()</td>
+            <td><code>&lt;code&gt;</code> or <code>&lt;span class="code"&gt;</code></td>
+            <td>Encodes recall of specific syntax</td>
+          </tr>
+          <tr>
+            <td>Definitions</td>
+            <td>Opening line of answer</td>
+            <td><code>&lt;blockquote&gt;</code>, <code>&lt;strong&gt;</code></td>
+            <td><strong>Triggers concept framing</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
   </div>
-<div class=" my-5 gy-5">
-  <h2 class="my-5">Interview Flashcards</h2>
+  <div class=" my-5 gy-5">
+    <h2 class="my-5">Interview Flashcards</h2>
 
-  <!-- Topic Filter -->
-  <div class="btn-group mb-4">
-    <button
-      *ngFor="let t of topics"
-      class="btn"
-      [class.btn-primary]="t === selectedTopic"
-      [class.btn-outline-primary]="t !== selectedTopic"
-      (click)="loadQuestions(t)">
-      {{ t }}
-    </button>
+    <!-- Topic Filter -->
+    <div class="btn-group mb-4">
+      <button
+        *ngFor="let t of topics"
+        class="btn"
+        [class.btn-primary]="t === selectedTopic"
+        [class.btn-outline-primary]="t !== selectedTopic"
+        (click)="loadQuestions(t)">
+        {{ t }}
+      </button>
+    </div>
   </div>
-</div>
   <!-- Flashcard Grid -->
   <main class="row gy-5">
     <div class="col-md-4 mb-4" *ngFor="let card of flashcards">
