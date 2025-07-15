@@ -2,140 +2,140 @@
   {
     "topic": "Components",
     "question": "What is an Angular component?",
-    "answer": "A component controls a section of the UI using an HTML template, CSS, and TypeScript logic. It is defined using the `@Component` decorator.",
+    "answer": "<blockquote><strong>A component</strong></blockquote> <strong>controls</strong> a section of the UI using an <code>HTML template</code>, <code>CSS</code>, and <code>TypeScript</code> logic. It is <u>defined</u> using the <code>@Component</code> decorator.",
     "difficulty": "easy",
     "color": "success"
   },
   {
     "topic": "Components",
     "question": "How do you define a component in Angular?",
-    "answer": "Using the `@Component` decorator with selector, templateUrl or template, and styleUrls.",
+    "answer": "<u>Define</u> it using the <code>@Component</code> decorator with <strong>selector</strong>, <code>templateUrl</code> or <code>template</code>, and <code>styleUrls</code>.",
     "difficulty": "easy",
     "color": "success"
   },
   {
     "topic": "Modules",
     "question": "What is the role of NgModule?",
-    "answer": "`NgModule` is a decorator that defines a module which groups components, services, and other modules together.",
+    "answer": "<blockquote><strong>NgModule</strong></blockquote> is a <strong>decorator</strong> that <u>defines</u> a module which <u>groups</u> components, services, and other modules together.",
     "difficulty": "medium",
     "color": "warning"
   },
   {
     "topic": "Modules",
     "question": "What is the root module in every Angular app?",
-    "answer": "`AppModule` is the root module and is bootstrapped to launch the app.",
+    "answer": "<strong><code>AppModule</code></strong> is the <strong>root module</strong> and is <u>bootstrapped</u> to <u>launch</u> the app.",
     "difficulty": "easy",
     "color": "success"
   },
   {
     "topic": "Services & DI",
     "question": "What is Dependency Injection in Angular?",
-    "answer": "A design pattern where services or dependencies are provided to components rather than created inside them.",
+    "answer": "<blockquote><strong>Dependency Injection (DI)</strong></blockquote> is a <strong>design pattern</strong> where services or dependencies are <u>provided</u> to components rather than <u>created</u> inside them.",
     "difficulty": "medium",
     "color": "warning"
   },
   {
     "topic": "Services & DI",
     "question": "How do you create and inject a service in Angular?",
-    "answer": "Create with `ng generate service myService`, and inject using the constructor: `constructor(private myService: MyService) {}`",
+    "answer": "<u>Create</u> with <code>ng generate service myService</code>, and <u>inject</u> using the constructor: <code>constructor(private myService: MyService) {}</code>",
     "difficulty": "medium",
     "color": "warning"
   },
   {
     "topic": "Routing",
     "question": "How do you configure routing in Angular?",
-    "answer": "Using the `RouterModule.forRoot(routes)` in `AppModule` and defining routes as an array of path-component pairs.",
+    "answer": "<u>Configure</u> routing using the <code>RouterModule.forRoot(routes)</code> in <code>AppModule</code> and <u>define</u> routes as an array of <em>path-component</em> pairs.",
     "difficulty": "medium",
     "color": "warning"
   },
   {
     "topic": "Routing",
     "question": "How do you navigate programmatically in Angular?",
-    "answer": "Use the `Router` service: `this.router.navigate(['/path']);`",
+    "answer": "<u>Use</u> the <strong>Router</strong> service: <code>this.router.navigate(['/path']);</code>",
     "difficulty": "medium",
     "color": "warning"
   },
   {
     "topic": "Directives",
     "question": "What is a structural directive in Angular?",
-    "answer": "A directive that changes the DOM layout by adding/removing elements (e.g., `*ngIf`, `*ngFor`).",
+    "answer": "<blockquote><strong>A structural directive</strong></blockquote> <u>changes</u> the DOM layout by <u>adding/removing</u> elements (e.g., <code>*ngIf</code>, <code>*ngFor</code>).",
     "difficulty": "easy",
     "color": "success"
   },
   {
     "topic": "Directives",
     "question": "What is the purpose of `*ngIf`?",
-    "answer": "It conditionally includes or removes elements in the DOM based on a Boolean expression.",
+    "answer": "It <u>conditionally includes</u> or <u>removes</u> elements in the DOM based on a <strong>Boolean expression</strong>.",
     "difficulty": "easy",
     "color": "success"
   },
   {
     "topic": "Lifecycle",
     "question": "What is ngOnInit?",
-    "answer": "`ngOnInit()` is a lifecycle hook called after the component's constructor and after the first `ngOnChanges()`.",
+    "answer": "<code>ngOnInit()</code> is a <strong>lifecycle hook</strong> <u>called</u> after the component's constructor and after the first <code>ngOnChanges()</code>.",
     "difficulty": "medium",
     "color": "warning"
   },
   {
     "topic": "Lifecycle",
     "question": "When is ngOnDestroy called?",
-    "answer": "`ngOnDestroy()` is called just before the component is removed from the DOM. Useful for cleanup.",
+    "answer": "<code>ngOnDestroy()</code> is <u>called</u> just before the component is <u>removed</u> from the DOM. <strong>Useful</strong> for <u>cleanup</u>.",
     "difficulty": "medium",
     "color": "warning"
   },
   {
     "topic": "Forms",
     "question": "What is the difference between template-driven and reactive forms?",
-    "answer": "Template-driven forms are defined in HTML using directives, while reactive forms are defined in TypeScript using FormControl and FormGroup.",
+    "answer": "<blockquote><strong>Template-driven forms</strong></blockquote> are <u>defined</u> in HTML using directives, while <strong>reactive forms</strong> are <u>defined</u> in TypeScript using <code>FormControl</code> and <code>FormGroup</code>.",
     "difficulty": "hard",
     "color": "danger"
   },
   {
     "topic": "Forms",
     "question": "How do you bind an input field to a variable in template-driven forms?",
-    "answer": "Use `[(ngModel)]` two-way data binding.",
+    "answer": "<u>Use</u> <code>[(ngModel)]</code> two-way data binding.",
     "difficulty": "easy",
     "color": "success"
   },
   {
     "topic": "RxJS",
     "question": "What is an Observable in Angular?",
-    "answer": "An Observable represents a stream of asynchronous data that can be subscribed to.",
+    "answer": "<blockquote><strong>An Observable</strong></blockquote> represents a <strong>stream</strong> of asynchronous data that can be <u>subscribed</u> to.",
     "difficulty": "medium",
     "color": "warning"
   },
   {
     "topic": "RxJS",
     "question": "What does the `subscribe()` method do?",
-    "answer": "It allows you to listen to values emitted by an Observable and take action when values are received.",
+    "answer": "It <u>allows</u> you to <u>listen</u> to values <u>emitted</u> by an <strong>Observable</strong> and <u>take action</u> when values are received.",
     "difficulty": "easy",
     "color": "success"
   },
   {
     "topic": "RxJS",
     "question": "What is the `pipe()` method used for?",
-    "answer": "It chains RxJS operators to transform the stream (e.g., `map`, `filter`, `switchMap`).",
+    "answer": "It <u>chains</u> RxJS operators to <u>transform</u> the stream (e.g., <code>map</code>, <code>filter</code>, <code>switchMap</code>).",
     "difficulty": "medium",
     "color": "warning"
   },
   {
     "topic": "RxJS",
     "question": "What does `switchMap` do?",
-    "answer": "`switchMap` cancels the previous inner Observable and subscribes to the new one. Useful for search/autocomplete.",
+    "answer": "<code>switchMap</code> <u>cancels</u> the previous inner <strong>Observable</strong> and <u>subscribes</u> to the new one. <strong>Useful</strong> for <em>search/autocomplete</em>.",
     "difficulty": "hard",
     "color": "danger"
   },
   {
     "topic": "CLI",
     "question": "How do you generate a component using Angular CLI?",
-    "answer": "`ng generate component component-name` or shorthand `ng g c component-name`",
+    "answer": "<u>Run</u> <code>ng generate component component-name</code> or shorthand <code>ng g c component-name</code>",
     "difficulty": "easy",
     "color": "success"
   },
   {
     "topic": "CLI",
     "question": "How do you create a new Angular project?",
-    "answer": "`ng new project-name`",
+    "answer": "<u>Use</u> <code>ng new project-name</code>",
     "difficulty": "easy",
     "color": "success"
   }

@@ -11,7 +11,7 @@ import { Flashcard } from '../models/flashcard';
   templateUrl: './interview-questions.component.html',
   styleUrl: './interview-questions.component.css'
 })
-export class InterviewQuestionsComponent {
+export class InterviewQuestionsComponent implements OnInit{
   topics = ['Angular', 'React', 'Java'];
   selectedTopic = 'Angular';
   flashcards: Flashcard[] = [];

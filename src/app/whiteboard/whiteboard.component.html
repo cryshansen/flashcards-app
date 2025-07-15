@@ -1,0 +1,34 @@
+
+<div class="container my-5">
+  <h2>Whiteboard Code Q&As</h2>
+
+  <div class="row my-5">
+    
+  <div class=" my-5 gy-5">
+    <!-- Topic Filter -->
+    <div class="btn-group mb-4">
+      
+    <!-- Dataset Selector -->
+    <label class="d-flex flex-column">
+        <span class="fw-semibold mb-1">Dataset:</span>
+        <select class="form-select" [(ngModel)]="selectedDataset" (change)="loadQuestions()">
+        <option *ngFor="let ds of topics" [value]="ds">{{ ds }}</option>
+        </select>
+    </label>
+       <!-- Topic Selector -->
+        <label class="d-flex flex-column">
+            <span class="fw-semibold mb-1">Topic:</span>
+            <select class="form-select" [(ngModel)]="selectedTopic">
+            <option *ngFor="let t of topicFilters" [value]="t">{{ t }}</option>
+            </select>
+        </label>
+    </div>
+  </div>
+  <!-- Flashcard Grid -->
+  <main class="row gy-5">
+    <div class="col-md-4 mb-4" *ngFor="let card of filteredCards()">
+      <app-flashcard [flashcard]="card"></app-flashcard>
+    </div>
+  </main>
+</div>
+

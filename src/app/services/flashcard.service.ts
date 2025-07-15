@@ -20,6 +20,10 @@ export class FlashcardService {
     const file = `assets/data/interview-questions-${topic.toLowerCase()}.json`;
     return this.http.get<Flashcard[]>(file);
   }
+  getWhiteboardQuestions(topic: string): Observable<Flashcard[]> {
+    const file = `assets/data/whiteboard-questions-${topic.toLowerCase()}.json`;
+    return this.http.get<Flashcard[]>(file);
+  }
 
 
 }
