@@ -1,0 +1,37 @@
+<div class="row mb-5">
+<!-- Right: Live Preview -->
+<div class="col-md-6">
+    <h4 class="mt-3">Final Visual Output</h4>
+    <p class="text-muted">
+        This live preview shows <strong title="([strong], [underline], [em], [code])">visual cues</strong><fa-icon class="ms-3" [icon]="faCircleQuestion"></fa-icon>
+         as they will display in your flashcard  
+            to appear as expected  clean and neat. 
+    </p>
+
+    <div 
+        class="preview border rounded bg-light p-3 h-50" 
+        [innerHTML]="renderedTextContent">
+        <!-- Live visual preview -->
+    </div> 
+</div>
+<div class="col-md-6">
+        <h4 class="mt-3">Final Speech Output</h4>
+        <p class="text-muted">
+            This speech preview shows <strong title="([pause], [longpause], [emphasize as em:Word])" >speech cues</strong><fa-icon class="ms-3" [icon]="faCircleQuestion"></fa-icon>
+            They are contained separately for TTS adjustments.
+        </p>
+        <div 
+            class="preview border rounded bg-light p-3 h-50" 
+            [innerHTML]="renderedSpeechContent">
+            <!-- Live visual preview -->
+        </div>
+
+    </div>
+</div>
+<div class="row">
+    <!-- display the flashcard like # 3 -->
+    <!-- display the text for reading aloud and a listen button -->
+    <button class="col-4 m-2 p-2 btn btn-success" (click)="saveContent()">Save Flashcard</button>
+    <!-- this will whipe out the localStorage / form text items but may be the finish button choice to save reminder or to clear -->
+    <button type="button" class="col-4  m-2 p-2 btn btn-outline-danger me-2" (click)="clearContent()">Clear</button>
+</div>

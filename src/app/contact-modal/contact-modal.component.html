@@ -1,0 +1,25 @@
+
+<div class="modal fade show d-block" tabindex="-1" role="dialog" style="background: rgba(0,0,0,.5);">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Contact Us</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+            <label>Name:</label>
+            <input class="form-control" formControlName="name" type="text" />
+            <label>Email:</label>
+            <input class="form-control" formControlName="email" type="email" />
+            <label>Message:</label>
+            <textarea class="form-control" formControlName="message"></textarea>
+            <div class="modal-buttons mt-3">
+                <button class="btn btn-primary" type="submit">Send</button>
+                <button class="btn btn-light" type="button" (click)="closeModal()">Cancel</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

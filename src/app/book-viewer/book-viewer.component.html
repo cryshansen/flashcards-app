@@ -1,0 +1,14 @@
+<div *ngIf="bookData" class="mt-5 p-3">
+  <h2>{{ bookData.title }}</h2>
+  <p>by {{ bookData.author }}</p>
+
+  <div class="mt-5" *ngIf="currentPage">
+    <h3 class="mt-5 mb-5">{{ currentPage.title }}</h3>
+    <p ><strong class="text-primary">Problem:</strong> {{ currentPage.problem }}</p>
+    <p ><strong class="text-success">Idea:</strong> {{ currentPage.idea }}</p>
+    <pre class="bg-dark text-white p-5 ">{{ currentPage.code }}</pre>
+  </div>
+
+  <button (click)="prevPage()" [disabled]="currentIndex === 0">Previous</button>
+  <button (click)="nextPage()" [disabled]="currentIndex === bookData.pages.length - 1">Next</button>
+</div>

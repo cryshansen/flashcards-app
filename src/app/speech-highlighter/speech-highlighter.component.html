@@ -1,0 +1,16 @@
+
+
+<ng-container *ngFor="let group of ['tts']">
+    <div class="m-2 p-2 border rounded" [ngStyle]="{'background-color': group === 'visual' ? '#f8f9fa' : '#fff3cd'}">
+    <strong>{{ group === 'visual' ? 'Visual Grammar Cues' : 'TTS Cues' }}</strong>
+        <div class="d-flex flex-wrap gap-2 mt-2"n *ngIf="cues?.length">
+            <button *ngFor="let cue of cues | filterByType:group"
+                    class="btn btn-sm"
+                    [ngStyle]="{'background-color': cue.color, 'color': '#fff'}" 
+                    (click)="insertAtCursor(cue.tag)"
+                    [title]="cue.description">
+            {{ cue.name }}
+            </button>
+        </div>
+    </div>
+</ng-container>

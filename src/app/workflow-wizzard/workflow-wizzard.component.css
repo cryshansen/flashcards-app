@@ -1,0 +1,24 @@
+.workflow-container {
+  position: relative;
+  width: 100%;
+  max-width: 100vh;
+  margin: auto;
+  overflow: hidden;
+  height: 650px;
+}
+
+.step-wrapper {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.workflow-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.inactive{
+   display: none;
+}

@@ -1,0 +1,33 @@
+<!-- <p>guidlines-drawer works!</p>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalSlide">Summon Modal</button>
+
+<div class="modal fade" id="ModalSlide" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-slideout" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title align-right" id="exampleModalLabel">Hi. I'm Modal.</h5>
+
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<!-- Overlay background -->
+<div class="drawer-backdrop" *ngIf="isOpen" (click)="close()"></div>
+
+<!-- Drawer panel -->
+<div class="drawer" [class.open]="isOpen">
+  <div class="drawer-header">
+    <h5>Guidelines</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+  </div>
+  <div class="drawer-body">
+    <app-tts-text-guideline></app-tts-text-guideline>
+    <app-visual-cues-guideline></app-visual-cues-guideline>
+</div>

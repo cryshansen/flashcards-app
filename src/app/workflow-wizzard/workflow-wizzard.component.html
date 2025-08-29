@@ -1,0 +1,94 @@
+
+<div class="workflow-container">
+  <div class="step-wrapper  m-5 p-5"
+       *ngFor="let step of steps; let i = index"
+       [class.active]="i === activeStep"
+       [class.inactive]="i !== activeStep"
+       [@slideUp]="i === activeStep ? 'active' : 'inactive'">
+       
+    <!-- Dynamically load the template -->
+     
+    <ng-container *ngIf="step.templateName === 'step1'">
+      <ng-template [ngTemplateOutlet]="step1"></ng-template>
+    </ng-container>
+
+    <ng-container *ngIf="step.templateName === 'step2'">
+      <ng-template [ngTemplateOutlet]="step2"></ng-template>
+    </ng-container>
+
+    <ng-container *ngIf="step.templateName === 'step3'">
+      <ng-template [ngTemplateOutlet]="step3"></ng-template>
+    </ng-container>
+
+     <ng-container *ngIf="step.templateName === 'step4'">
+      <ng-template [ngTemplateOutlet]="step4"></ng-template>
+    </ng-container>
+
+     <ng-container *ngIf="step.templateName === 'step5'">
+      <ng-template [ngTemplateOutlet]="step5"></ng-template>
+    </ng-container>
+
+     <ng-container *ngIf="step.templateName === 'step6'">
+      <ng-template [ngTemplateOutlet]="step6"></ng-template>
+    </ng-container>
+
+  </div>
+
+  <div class="workflow-controls">
+    <button (click)="prev()" [disabled]="activeStep === 0">Back</button>
+    <button (click)="next()" *ngIf="activeStep < steps.length - 1">Next</button>
+    <button (click)="finish()" *ngIf="activeStep === steps.length - 1">Finish</button>
+  </div>
+</div>
+
+<!-- Step Templates -->
+<ng-template #step1>
+    <div class="mb-5 pb-5">
+        <h3>Step 1: Enter your Flashcard  Text</h3>
+        
+        <!-- insert flashcard-input -->
+        <app-flahscard-input [(text)]="flashcardText"></app-flahscard-input>
+  </div>
+</ng-template>
+
+<ng-template #step2>
+  <h3>Step 2: Highlight  Visual Cues </h3>
+  <p title="Get AI to do it! (TODO)">Select your text then choose a button - it will auto-wrap your choice for the visual que learning feature. Try it! </p>
+
+  <app-flahscard-input [(text)]="flashcardText"></app-flahscard-input>
+  <!-- insert visual-highlighter-->
+   <app-visual-highlighter></app-visual-highlighter>
+     <p>(Annotate: Annotation component will go here later like tooltips)</p>
+</ng-template>
+
+<ng-template #step3>
+  <h3>Step 3:  Review Visual Cues</h3>
+  <p>View your changes and button Get AI to do it! </p>
+  <app-live-preview></app-live-preview>
+</ng-template>
+    
+<ng-template #step4>
+    <h3>Step 4: Speech Indication</h3>
+    <p>Select your speech indicators select the word(s) and select the indicator -- Have AI improve </p>
+    <p class="text-muted">
+        Select text and choose a button — it will auto-wrap your choice.  
+        Note: <em>Emphasis (TTS)</em> will prompt you to enter the word.
+    </p>
+    <div class="col-6">
+        <app-flahscard-input [(text)]="flashcardText"></app-flahscard-input>
+    </div>
+    <div class="col-6">
+        <app-speech-highlighter></app-speech-highlighter>
+    </div> 
+
+</ng-template>
+<ng-template #step5>
+    <h3>Step 5: Visualize speech selections</h3>
+    <p>review your flashcard speech  -- Have AI improve </p>
+    <app-tts-preview></app-tts-preview>
+</ng-template>
+<ng-template #step6>
+    <h3>Step 6: Review & Save</h3>
+    <p>View final outputs for memory cues and tts cues save. </p>
+    <app-save-card></app-save-card>
+</ng-template>

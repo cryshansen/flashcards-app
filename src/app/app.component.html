@@ -7,32 +7,121 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <div class="fluid-container">
-<!-- app.component.html -->
-<!-- app.component.html -->
-<div class="fluid-container "> 
-    <nav class="navbar navbar-expand navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" routerLink="/">Flashcards App</a>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                <a class="nav-link" routerLink="/home" routerLinkActive="active">Flashcards</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" routerLink="/interview" routerLinkActive="active">Interview QA</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" routerLink="/whiteboard" routerLinkActive="active">Whiteboard QA</a>
-                </li>
-                 <li class="nav-item">
-                <a class="nav-link" routerLink="/elevator" routerLinkActive="active">Elevator</a>
-                </li>
-            </ul>
+
+<div class=" bg-light p-0">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"><fa-icon [icon]="faLocationDot"></fa-icon></small>
+                    <small>250 Gary Carter, Montreal, Canada</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-3">
+                    <small class="far fa-clock text-primary me-2"><fa-icon [icon]="faClock"></fa-icon></small>
+                    <small>Mon - Sat: 09:00 AM - 07:00 PM</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="text-primary me-2"><fa-icon [icon]="faPhone"></fa-icon></small>
+                    <small>+1 888 819-5681</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""> <fa-icon [icon]="faFacebook"></fa-icon></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><fa-icon [icon]="faTwitter"></fa-icon></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><fa-icon [icon]="faLinkedin"></fa-icon></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><fa-icon [icon]="faInstagram"></fa-icon></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-0" href="/signin"><fa-icon [icon]="faUser"></fa-icon></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a routerLink class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><a routerLink="/home" class="nav-item nav-link" routerLinkActive="active">FlashLearn</a></h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <!-- <a routerLink="/home" class="nav-item nav-link" routerLinkActive="active">Home</a>-->
+                <a routerLink="/about" class="nav-item nav-link">About</a>
+               <!-- <a routerLink="/home" class="nav-item nav-link">Service</a> -->
+                <a routerLink="/project" class="nav-item nav-link">Project</a>
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+                    <div class="dropdown-menu fade-up m-0" aria-labelledby="productsDropdown">
+                        <a routerLink="/flashcard" class="nav-link"   class="dropdown-item">Flashcards</a>
+                        <a routerLink="/whiteboard" class="dropdown-item">Whiteboard</a>
+                        <a routerLink="/booster" class="dropdown-item">Boost</a>
+                        <a routerLink="/elevator" class="dropdown-item">Elevate</a>
+                    </div>
+                </div>
+                <a href="#" (click)="openModal($event)" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="user-content-editor" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block nav-item ">Try Now <fa-icon class="ms-3" [icon]="faArrowRight"></fa-icon></a>
         </div>
     </nav>
 </div>
 
-<main class="container mt-4">
+<main class="container mt-5">
   <router-outlet></router-outlet>
+<button 
+  class="tts-button"
+  (click)="toggleReadPage()">
+  🔊
+</button>
+
+<!-- old <app-contact-modal *ngIf="showContact" (closed)="showContact=false"></app-contact-modal> -->
+<app-contact-modal *ngIf="showContactM$ | async" (close)="closeModal()"></app-contact-modal>
 </main>
 
-</div>
+
+<!-- Get Started in 3 Simple Steps: -->
+<section class="py-5 bg-light" *ngIf="showBottomContent">
+  <div class="container text-center">
+    <h2 class="mb-5">Get Started in 3 Simple Steps:</h2>
+    
+    <div class="row g-5 justify-content-center">
+      <!-- Step 1 -->
+      <div class="col-md-4">
+        <div class="p-4 shadow rounded bg-white h-100">
+          <div class="mb-3">
+            <i class="fas fa-pencil-alt fa-3x text-primary"></i>
+          </div>
+          <h5>Create</h5>
+          <p>Customizable Decks - Build your own decks or choose from existing subjects. Add questions, answers, and hints your way.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="col-md-4">
+        <div class="p-4 shadow rounded bg-white h-100">
+          <div class="mb-3">
+            <i class="fas fa-book-open fa-3x text-success"></i>
+          </div>
+          <h5>Study</h5>
+          <p>Smart Review Flip through cards, test yourself, or listen hands-free with text-to-speech while commuting.</p>
+          <p>Boost your memory retention</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="col-md-4">
+        <div class="p-4 shadow rounded bg-white h-100">
+          <div class="mb-3">
+            <i class="fas fa-trophy fa-3x text-warning"></i>
+          </div>
+          <h5>Master</h5>
+          <p>Track progress, practice with smart review, and boost long-term memory retention On-the-Go.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CTA Footer -->
+<section class="container text-center my-5" *ngIf="showBottomContent">
+  <h3 class="my-5 py-5">Ready to boost your learning?</h3>
+  <button class="btn btn-success btn-lg m-2" routerLink="/user-content-editor">Try Flashcards Free</button>
+</section>

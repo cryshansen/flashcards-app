@@ -1,0 +1,92 @@
+
+<div class="container my-5" >
+  <h1 class="display-6">🧠 Memory Strategy: Visual Grammar Cues</h1>
+  <p class="lead">Visual Encoding for Memory Retention</p>
+  <div style="overflow-x: auto;">
+    <table class="my-5 gy-5 table table-striped table-sm" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+      <thead>
+        <tr class="table-active">
+          <th>Element Type</th>
+          <th>Example</th>
+          <th>Suggested Format</th>
+          <th>Memory Benefit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Concepts or Terms</td>
+          <td>Components, Services, Observables</td>
+          <td><code>&lt;strong&gt;term&lt;/strong&gt;</code></td>
+          <td><strong>Emphasizes core vocabulary</strong></td>
+        </tr>
+        <tr>
+          <td>Verbs / Actions</td>
+          <td>passed, emits, fetch, bind</td>
+          <td><code>&lt;u&gt;verb&lt;/u&gt;</code></td>
+          <td><u>Highlights process / behavior</u></td>
+        </tr>
+        <tr>
+          <td>Data Flow / Direction</td>
+          <td>parent to child, child to parent</td>
+          <td><code>&lt;em&gt;phrase&lt;/em&gt;</code></td>
+          <td><em>Emphasizes pathways or interactions</em></td>
+        </tr>
+        <tr>
+          <td>Key Syntax</td>
+          <td>&#64;Input, useEffect()</td>
+          <td><code>&lt;code&gt;</code> or <code>&lt;span class="code"&gt;</code></td>
+          <td>Encodes recall of specific syntax</td>
+        </tr>
+        <tr>
+          <td>Definitions</td>
+          <td>Opening line of answer</td>
+          <td><code>&lt;blockquote&gt;</code>, <code>&lt;strong&gt;</code></td>
+          <td><strong>Triggers concept framing</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container my-5 gy-5">
+  <h2 class="my-5">Flashcards</h2>
+  <!-- Dataset Selector -->
+  <div class="d-flex flex-wrap align-items-center gap-3 mb-4 px-3">
+
+  <!-- Dataset Selector -->
+  <label class="d-flex flex-column">
+    <span class="fw-semibold mb-1">Dataset:</span>
+    <select class="form-select" [(ngModel)]="selectedDataset" (change)="loadFlashcards()">
+      <option *ngFor="let ds of topics" [value]="ds">{{ ds }}</option>
+    </select>
+  </label>
+
+  <!-- Topic Selector -->
+  <label class="d-flex flex-column">
+    <span class="fw-semibold mb-1">Topic:</span>
+    <select class="form-select" [(ngModel)]="selectedTopic">
+      <option *ngFor="let t of topicFilters" [value]="t">{{ t }}</option>
+    </select>
+  </label>
+
+  <!-- Difficulty Selector -->
+  <label class="d-flex flex-column">
+    <span class="fw-semibold mb-1">Difficulty:</span>
+    <select class="form-select" [(ngModel)]="selectedDifficulty">
+      <option *ngFor="let level of difficultyLevels" [value]="level">
+        {{ level | titlecase }}
+      </option>
+    </select>
+  </label>
+
+</div>
+
+</div>
+<main class="container my-5">
+  <div class="row g-4">
+    <!-- Cards -->
+    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let card of filteredCards()">
+      <app-flashcard [flashcard]="card"></app-flashcard>
+    </div>
+  </div>
+</main>

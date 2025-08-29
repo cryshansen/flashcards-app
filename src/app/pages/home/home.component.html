@@ -1,91 +1,60 @@
-<div class="container my-5" >
-  <h1 class="display-6">🧠 Memory Strategy: Visual Grammar Cues</h1>
-  <p class="lead">Visual Encoding for Memory Retention</p>
-  <div style="overflow-x: auto;">
-    <table class="my-5 gy-5 table table-striped table-sm" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-      <thead>
-        <tr class="table-active">
-          <th>Element Type</th>
-          <th>Example</th>
-          <th>Suggested Format</th>
-          <th>Memory Benefit</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Concepts or Terms</td>
-          <td>Components, Services, Observables</td>
-          <td><code>&lt;strong&gt;term&lt;/strong&gt;</code></td>
-          <td><strong>Emphasizes core vocabulary</strong></td>
-        </tr>
-        <tr>
-          <td>Verbs / Actions</td>
-          <td>passed, emits, fetch, bind</td>
-          <td><code>&lt;u&gt;verb&lt;/u&gt;</code></td>
-          <td><u>Highlights process / behavior</u></td>
-        </tr>
-        <tr>
-          <td>Data Flow / Direction</td>
-          <td>parent to child, child to parent</td>
-          <td><code>&lt;em&gt;phrase&lt;/em&gt;</code></td>
-          <td><em>Emphasizes pathways or interactions</em></td>
-        </tr>
-        <tr>
-          <td>Key Syntax</td>
-          <td>&#64;Input, useEffect()</td>
-          <td><code>&lt;code&gt;</code> or <code>&lt;span class="code"&gt;</code></td>
-          <td>Encodes recall of specific syntax</td>
-        </tr>
-        <tr>
-          <td>Definitions</td>
-          <td>Opening line of answer</td>
-          <td><code>&lt;blockquote&gt;</code>, <code>&lt;strong&gt;</code></td>
-          <td><strong>Triggers concept framing</strong></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 
-<div class="container my-5 gy-5">
-  <h2 class="my-5">Flashcards</h2>
-  <!-- Dataset Selector -->
-  <div class="d-flex flex-wrap align-items-center gap-3 mb-4 px-3">
+<div class="container my-5">
+    <app-landing-section></app-landing-section>
+  
 
-  <!-- Dataset Selector -->
-  <label class="d-flex flex-column">
-    <span class="fw-semibold mb-1">Dataset:</span>
-    <select class="form-select" [(ngModel)]="selectedDataset" (change)="loadFlashcards()">
-      <option *ngFor="let ds of topics" [value]="ds">{{ ds }}</option>
-    </select>
-  </label>
+  <section>
+    <div class="home-page container">
+      <h3 class="mb-3 p-5 text-center">FlashLearn 🎧 Master Any Subject with Smarter Flashcards</h3>
+      <p class="lead p-5 pb-3">
+        Our Flashcards App makes studying simple, effective, and fun. 
+        Whether you’re preparing for exams, learning a language, or picking up new skills, 
+        interactive flashcards help you retain knowledge faster.
+      </p>
+      <p class="mb-5 p-5">
+        FlashLearn is your personal “listen on the go” flashcard app. 
+        You can create, edit, and study your own flashcards while walking, commuting, or at home. 
+        Hear your questions and answers read aloud with adjustable voices and speeds.
+      </p>
+     <hr class="border-3 w-sm-25 mx-auto  mt-lx-5 me-lx-5 px-lx-5" style="max-width: 350px;"/>
+      <!-- Features -->
+      <div class="container my-5 my-lx-5 p-2 p-lx-5">  
+      <section class="row text-center my-5">
+        <div class="col-md-3 mb-5">
+          <h4>🎧 Listen on the Go</h4>
+          <p>Convert cards to audio and study hands-free.</p>
+        </div>
+        <div class="col-md-3 mb-5">
+          <h4>📱 Mobile Friendly</h4>
+          <p>Works beautifully across all devices.</p>
+        </div>
+        <div class="col-md-3 mb-5">
+          <h4>⚡ Fast & Simple</h4>
+          <p>Clean and intuitive study experience.</p>
+        </div>
+        <div class="col-md-3 mb-5 ">
+          <h4>🎨 Customizable</h4>
+          <p>Build decks for any subject, your way.</p>
+        </div>
+      </section>
+      </div>
+    <app-howworks></app-howworks>
+    
+    <section class="row position-relative y-5 py-5">
+      <div class="col-12 col-lg-8 d-flex flex-column justify-content-start p-5">
+          <h4 class="my-5">🧠 Learn Faster.</h4><h4 class="text-center"><strong >Remember</strong> </h4><h4 class="text-end pr-5">Longer.</h4>
+       </div>  
+      <div class="col-12 col-lg-4 d-flex flex-column justify-content-end mt-5 pe-5">
+        <div class="pt-5">
+        <p class="mb-5"></p>
+         <p class="text-end position-absolute align-text-bottom bottom-0 my-5">Flashcards are powerful because they engage active recall — the brain’s way of <strong >strengthening</strong> connections by retrieving knowledge rather than just re-reading. But we go further...</p>
+         </div>
+      </div>
+          
+    </section>
+      <p class="text-end  m-2 mb-5">Want to create your own flashcards? Click <a routerLink="">here</a> to learn how.</p>
 
-  <!-- Topic Selector -->
-  <label class="d-flex flex-column">
-    <span class="fw-semibold mb-1">Topic:</span>
-    <select class="form-select" [(ngModel)]="selectedTopic">
-      <option *ngFor="let t of topicFilters" [value]="t">{{ t }}</option>
-    </select>
-  </label>
-
-  <!-- Difficulty Selector -->
-  <label class="d-flex flex-column">
-    <span class="fw-semibold mb-1">Difficulty:</span>
-    <select class="form-select" [(ngModel)]="selectedDifficulty">
-      <option *ngFor="let level of difficultyLevels" [value]="level">
-        {{ level | titlecase }}
-      </option>
-    </select>
-  </label>
-
-</div>
-
-</div>
-<main class="container my-5">
-  <div class="row g-4">
-    <!-- Cards -->
-    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let card of filteredCards()">
-      <app-flashcard [flashcard]="card"></app-flashcard>
     </div>
-  </div>
-</main>
+  </section>
+
+</div>

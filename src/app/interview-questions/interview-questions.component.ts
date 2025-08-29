@@ -12,7 +12,7 @@ import { Flashcard } from '../models/flashcard';
   styleUrl: './interview-questions.component.css'
 })
 export class InterviewQuestionsComponent implements OnInit{
-  topics = ['Angular', 'React', 'Java'];
+  topics = ['Angular', 'React', 'Java', 'Testing'];
   selectedTopic = 'Angular';
   flashcards: Flashcard[] = [];
 

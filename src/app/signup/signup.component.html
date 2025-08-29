@@ -1,0 +1,90 @@
+
+<div class="container my-5" style="max-width: 500px;">
+  <h1 class="pt-5 pb-5">
+    Get Started 
+  </h1>
+  <h2 class="mb-4 text-center">Sign Up</h2>
+  <p class="lead text-muted">Join thousands learning smarter today.</p>
+    <app-spinner *ngIf="loading"></app-spinner>
+    <div *ngIf="isSuccess; else errorBlock" class="text-success">
+        <p>{{ message }}</p>
+     </div>
+    <ng-template #errorBlock>
+        <p class="text-danger">{{ message }}</p>
+    </ng-template>
+
+  <form  class="needs-validation" novalidate [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="firstName" class="form-label">First Name</label>
+      <input type="text" id="firstName" autocomplete="given-name" formControlName="firstName" [class.is-invalid]="signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched"  class="form-control" placeholder="Enter your first name">
+        <div class="invalid-feedback">
+          Valid first name is required.
+        </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input type="text" id="lastName" autocomplete="family-name" formControlName="lastName" [class.is-invalid]="signupForm.get('lastName')?.invalid && signupForm.get('lastName')?.touched"  class="form-control" placeholder="Enter your last name">
+       <div class="invalid-feedback">
+          Valid Last name is required.
+        </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="suemail" class="form-label">Email address</label>
+      <input type="email" id="suemail" autocomplete="email" formControlName="suemail" [class.is-invalid]="signupForm.get('suemail')?.invalid && signupForm.get('suemail')?.touched" class="form-control" placeholder="Enter your email">
+       <div class="invalid-feedback">
+          Valid  email is required.
+        </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <div class="input-group">     
+         <input [type]="showPassword ? 'text' : 'password'"  id="password" autocomplete="new-password" formControlName="password" [class.is-invalid]="signupForm.get('password')?.invalid && signupForm.get('password')?.touched"  class="form-control" placeholder="Create a password">
+        <button type="button" class="btn btn-outline-secondary" (click)="showPassword = !showPassword"><fa-icon [icon]="showPassword ? faEyeSlash : faEye"></fa-icon></button>
+      </div>
+      <div id="" class="form-text"><small class="text-muted">
+        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</small>
+     </div>
+     <ul class="password-requirements" *ngIf="passwordTouched">
+        <li [class.valid]="passwordRules.lengthValid">
+          <span *ngIf="passwordRules.lengthValid" class="checked">✔</span>
+          <span *ngIf="!passwordRules.lengthValid" class="neutral">•</span>
+          8–20 characters
+        </li>
+        <li [class.valid]="passwordRules.containsLetter">
+          <span *ngIf="passwordRules.containsLetter" class="checked">✔</span>
+          <span *ngIf="!passwordRules.containsLetter" class="neutral">•</span>
+          At least one letter
+        </li>
+        <li [class.valid]="passwordRules.containsNumber">
+          <span *ngIf="passwordRules.containsNumber" class="checked">✔</span>
+          <span *ngIf="!passwordRules.containsNumber" class="neutral">•</span>
+          At least one number
+        </li>
+        <li [class.valid]="passwordRules.noSpecialsOrSpaces">
+          <span *ngIf="passwordRules.noSpecialsOrSpaces" class="checked">✔</span>
+          <span *ngIf="!passwordRules.noSpecialsOrSpaces" class="neutral">•</span>
+          No special characters, spaces, or emoji
+        </li>
+      </ul>
+
+      <div class="invalid-feedback" *ngIf="signupForm.get('password')?.hasError('passwordStrength')">
+          Valid password doesnt contain the proper requirements
+        </div>
+    </div>
+    <div class="mb-4">
+      <label for="confirmPassword" class="form-label">Confirm Password</label>
+      <div class="input-group">   
+        <input [type]="showConfirmPassword ? 'text' : 'password'"  id="confirmPassword"  formControlName="confirmPassword" [class.is-invalid]="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched" class="form-control" placeholder="Confirm your password">
+        <button type="button" class="btn btn-outline-secondary" (click)="showConfirmPassword = !showConfirmPassword"><fa-icon [icon]="showConfirmPassword ? faEyeSlash : faEye"></fa-icon></button>
+      </div>
+      <div class="invalid-feedback"*ngIf="signupForm.hasError('passwordMismatch') && signupForm.get('confirmPassword')?.touched">
+        Password must match
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+  </form>
+</div>

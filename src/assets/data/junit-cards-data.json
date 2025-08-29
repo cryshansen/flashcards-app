@@ -1,0 +1,72 @@
+[
+  {
+    "topic": "Java Testing",
+    "question": "What is JUnit used for in Java?",
+    "answer": "<strong>JUnit</strong> is a <strong>unit testing framework</strong> for Java that <u>allows</u> developers to <u>write</u> and <u>run</u> repeatable tests, <u>using</u> annotations like <strong>@Test</strong> to <u>mark</u> test methods.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java Testing",
+    "question": "What is the role of assertions in JUnit?",
+    "answer": "<strong>Assertions</strong> are methods like <strong>assertEquals()</strong> and <strong>assertTrue()</strong> that <u>verify</u> expected outcomes, <u>throwing</u> an <strong>AssertionError</strong> if the condition <u>fails</u>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java Testing",
+    "question": "How does JUnit 5 differ from JUnit 4?",
+    "answer": "<strong>JUnit 5</strong> <u>supports</u> <strong>modular architecture</strong> with <strong>JUnit Platform</strong>, <strong>Jupiter API</strong>, and <strong>Vintage Engine</strong>. It <u>replaces</u> JUnit 4 annotations like <strong>@Before</strong> with <strong>@BeforeEach</strong> and <strong>@After</strong> with <strong>@AfterEach</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java Testing",
+    "question": "What is Mockito used for?",
+    "answer": "<strong>Mockito</strong> is a <strong>mocking framework</strong> that <u>creates</u> mock objects to <u>simulate</u> dependencies, <u>allowing</u> isolation of the class under test.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java Testing",
+    "question": "How do you create a mock with Mockito?",
+    "answer": "You <u>use</u> <strong>Mockito.mock(ClassName.class)</strong> or <strong>@Mock</strong> annotation, then <u>define</u> behavior with <strong>when(...).thenReturn(...)</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java Testing",
+    "question": "What is the difference between a mock and a stub?",
+    "answer": "<strong>Stub</strong> <u>provides</u> fixed data to <u>support</u> the test, while <strong>mock</strong> <u>tracks</u> interactions and <u>verifies</u> behavior in addition to <u>returning</u> values.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java Testing",
+    "question": "What is TestNG and how does it differ from JUnit?",
+    "answer": "<strong>TestNG</strong> is a <strong>testing framework</strong> that <u>supports</u> <strong>parallel execution</strong>, <strong>data-driven tests</strong>, and <strong>more flexible configuration</strong> compared to JUnit’s simpler structure.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java Testing",
+    "question": "How do you test exceptions in JUnit?",
+    "answer": "You <u>use</u> <strong>assertThrows(ExpectedException.class, () -> { ... })</strong> in JUnit 5 or <strong>@Test(expected = Exception.class)</strong> in JUnit 4.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java Testing",
+    "question": "What is the purpose of @BeforeEach and @AfterEach in JUnit?",
+    "answer": "<strong>@BeforeEach</strong> <u>runs</u> before each test method to <u>set up</u> the test environment, and <strong>@AfterEach</strong> <u>runs</u> afterward to <u>clean up</u> resources.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java Testing",
+    "question": "What is parameterized testing in JUnit?",
+    "answer": "<strong>Parameterized testing</strong> <u>runs</u> the same test multiple times with different parameters, <u>using</u> <strong>@ParameterizedTest</strong> and <strong>@ValueSource</strong> or other sources.",
+    "difficulty": "medium",
+    "color": "warning"
+  }
+]

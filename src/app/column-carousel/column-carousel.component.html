@@ -1,0 +1,328 @@
+
+<section class="my-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2 text-center">
+                <h1 class="fw-bold">Carousel with Outer Controls</h1>
+                <p class="lead">
+                    Displays fewer contents on mobile devices. Includes optional <a href="https://getbootstrap.com/docs/5.3/customize/color-modes/">light/dark mode</a> support.
+                </p>
+                <a target="_blank" rel="noopener noreferrer" href="https://codepen.io/davidbiek/pen/OJpQpza" class="btn btn-primary mb-2">3-Column Version</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://codepen.io/davidbiek/pen/bMrQKN" class="btn btn-outline-secondary mb-2">Bootstrap 4 version</a>
+            </div>
+        </div>
+        <div class="row mx-auto my-auto justify-content-center">
+            <div class="col">
+                <div class="row">
+                    <div class="col-1 d-flex align-items-center justify-content-center">
+                        <a role="button" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                            <div class="carousel-nav-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <path d="m88.6,121.3c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2c1.6-1.6 1.6-4.2 0-5.8l-51-51 51-51c1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8,0l-54,53.9c-1.6,1.6-1.6,4.2 0,5.8l54,53.9z"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-10">
+                        <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                    <div class="col-md-3">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="//via.placeholder.com/500x400/31f?text=1" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="col-md-3">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="//via.placeholder.com/500x400/e66?text=2" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="col-md-3">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="//via.placeholder.com/500x400/7d2?text=3" class="img-fluid">
+                                            </div>
+                                            <div class="card-img-overlay h-100 d-flex align-items-center justify-content-center text-white">Text in the panel.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="col-md-3">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="//via.placeholder.com/500x400?text=4" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="col-md-3">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="//via.placeholder.com/500x400/aba?text=5" class="img-fluid">
+                                            </div>
+                                            <div class="card-img-overlay h-100 d-flex align-items-center justify-content-center text-white">Text in the panel.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="col-md-3">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="//via.placeholder.com/500x400/fc0?text=6" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Uncomment these lines to use the default overlay controls!
+                            <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </a>
+                            <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </a>
+                            -->
+                        </div>
+                    </div>
+                    <div class="col-1 d-flex align-items-center justify-content-center">
+                        <a role="button" href="#recipeCarousel" role="button" data-bs-slide="next">
+                            <div class="carousel-nav-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Nothing below this point is needed. -->
+<div class="position-absolute dark-mode-toggle">
+    <div class="form-check form-switch">
+        <input type="checkbox" class="form-check-input" id="darkSwitch">
+        <label class="nav-link custom-control-label" for="darkSwitch">Toggle Dark Mode</label>
+    </div>
+</div>
+<script>
+let items = document.querySelectorAll('.carousel .carousel-item')
+
+items.forEach((el) => {
+    const minPerSlide = 4
+    let next = el.nextElementSibling
+    for (var i=1; i<minPerSlide; i++) {
+        if (!next) {
+            // wrap carousel by using first child
+        	next = items[0]
+      	}
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
+    }
+})
+
+/* Nothing below this point is needed. */
+const darkSwitch = document.getElementById("darkSwitch");
+window.addEventListener("load", function () {
+    if (darkSwitch) {
+        initTheme();
+        darkSwitch.addEventListener("change", function () {
+            resetTheme();
+        });
+    }
+});
+
+function initTheme() {
+    let darkThemeSelected =
+        localStorage.getItem("darkSwitch") !== null &&
+        localStorage.getItem("darkSwitch") === "dark";
+    darkSwitch.checked = darkThemeSelected;
+    darkThemeSelected
+        ? document.documentElement.setAttribute('data-bs-theme', 'dark')
+    : document.documentElement.removeAttribute("data-bs-theme");
+}
+
+function resetTheme() {
+    if (darkSwitch.checked) {
+        document.documentElement.setAttribute("data-bs-theme", "dark");
+        localStorage.setItem("darkSwitch", "dark");
+    } else {
+        document.documentElement.removeAttribute("data-bs-theme");
+        localStorage.removeItem("darkSwitch");
+    }
+}
+</script>
+
+<section class="my-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2 text-center">
+                <h1 class="fw-bold">Carousel with Outer Controls</h1>
+                <p class="lead">
+                    Displays fewer contents on mobile devices. Includes optional <a href="https://getbootstrap.com/docs/5.3/customize/color-modes/">light/dark mode</a> support.
+                </p>
+               <a target="_blank" rel="noopener noreferrer" href="https://codepen.io/davidbiek/pen/PodYVwb" class="btn btn-primary mb-2">4-Column Version</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://codepen.io/davidbiek/pen/bMrQKN" class="btn btn-outline-secondary mb-2">Bootstrap 4 version</a>
+            </div>
+        </div>
+        <div class="row mx-auto my-auto justify-content-center">
+            <div class="col">
+                <div class="row">
+                    <div class="col-1 d-flex align-items-center justify-content-center">
+                        <a role="button" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                            <div class="carousel-nav-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <path d="m88.6,121.3c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2c1.6-1.6 1.6-4.2 0-5.8l-51-51 51-51c1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8,0l-54,53.9c-1.6,1.6-1.6,4.2 0,5.8l54,53.9z"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-10">
+                        <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="//via.placeholder.com/500x400/31f?text=1" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="//via.placeholder.com/500x400/e66?text=2" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="//via.placeholder.com/500x400/7d2?text=3" class="img-fluid">
+                                            </div>
+                                            <div class="card-img-overlay h-100 d-flex align-items-center justify-content-center text-white">Text in the panel.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="//via.placeholder.com/500x400?text=4" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="//via.placeholder.com/500x400/aba?text=5" class="img-fluid">
+                                            </div>
+                                            <div class="card-img-overlay h-100 d-flex align-items-center justify-content-center text-white">Text in the panel.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="//via.placeholder.com/500x400/fc0?text=6" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Uncomment these lines to use the default overlay controls!
+                            <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </a>
+                            <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </a>
+                            -->
+                        </div>
+                    </div>
+                    <div class="col-1 d-flex align-items-center justify-content-center">
+                        <a role="button" href="#recipeCarousel" role="button" data-bs-slide="next">
+                            <div class="carousel-nav-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Nothing below this point is needed. -->
+<div class="position-absolute dark-mode-toggle">
+    <div class="form-check form-switch">
+        <input type="checkbox" class="form-check-input" id="darkSwitch">
+        <label class="nav-link custom-control-label" for="darkSwitch">Toggle Dark Mode</label>
+    </div>
+</div>
+<script>
+    let items2 = document.querySelectorAll('.carousel .carousel-item')
+
+items.forEach((el) => {
+    const minPerSlide = 3
+    let next = el.nextElementSibling
+    for (var i=1; i<minPerSlide; i++) {
+        if (!next) {
+            // wrap carousel by using first child
+        	next = items2[0]
+      	}
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
+    }
+})
+
+/* Nothing below this point is needed. */
+const darkSwitch2 = document.getElementById("darkSwitch");
+window.addEventListener("load", function () {
+    if (darkSwitch2) {
+        initTheme();
+        darkSwitch2.addEventListener("change", function () {
+            resetTheme();
+        });
+    }
+});
+
+function initTheme() {
+    let darkThemeSelected =
+        localStorage.getItem("darkSwitch") !== null &&
+        localStorage.getItem("darkSwitch") === "dark";
+    darkSwitch2.checked = darkThemeSelected;
+    darkThemeSelected
+        ? document.documentElement.setAttribute('data-bs-theme', 'dark')
+    : document.documentElement.removeAttribute("data-bs-theme");
+}
+
+function resetTheme() {
+    if (darkSwitch2.checked) {
+        document.documentElement.setAttribute("data-bs-theme", "dark");
+        localStorage.setItem("darkSwitch", "dark");
+    } else {
+        document.documentElement.removeAttribute("data-bs-theme");
+        localStorage.removeItem("darkSwitch");
+    }
+}
+</script>

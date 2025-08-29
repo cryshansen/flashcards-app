@@ -8,6 +8,13 @@
   },
   {
     "topic": "Core Java",
+    "question": "What is the difference between final on variables, objects, methods, and classes?",
+    "answer": "<ul><li><strong>final variable:</strong> Once assigned, its value cannot be reassigned.</li>  <li><strong>final object reference:</strong> The ref cannot refer to another object, but internal state object values change.</li><li><strong>final method:</strong> Cannot be overridden by subclasses.</li><li><strong>final class:</strong> Cannot be extended (no inheritance).</li></ul>" ,   
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Core Java",
     "question": "What is the Reflections API used for?",
     "answer": "It <u>allows</u> <u>inspection</u> and <u>modification</u> of <strong>classes</strong>, <strong>methods</strong>, and <strong>fields</strong> at runtime — <u>used</u> in <strong>frameworks</strong> like <strong>Spring</strong> for <strong>dependency injection</strong> and <strong>annotation scanning</strong>.",
     "difficulty": "medium",

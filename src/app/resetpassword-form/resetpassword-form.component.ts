@@ -1,0 +1,192 @@
+import { Component, Input,OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormControl, FormGroup, FormBuilder,ReactiveFormsModule, Validators,ValidationErrors, AbstractControl } from '@angular/forms';
+import { RecaptchaV3Module, ReCaptchaV3Service } from 'ng-recaptcha';
+import { ActivatedRoute } from '@angular/router';
+
+
+
+import { UserService } from '../services/user.service';
+import { SpinnerComponent } from "../spinner/spinner.component";
+
+interface ResetUser {
+  password: string;
+  confirmpswd: string;
+  tokenUrl: string;
+}
+
+@Component({
+  selector: 'app-resetpassword-form',
+  imports: [CommonModule, ReactiveFormsModule, RecaptchaV3Module, SpinnerComponent],
+  templateUrl: './resetpassword-form.component.html',
+  styleUrl: './resetpassword-form.component.css'
+})
+
+/**
+ * User clicks the link → sent to resetpassword-form page.  endpoint ->resetnewpass as post event
+capture token
+Validate token and expiration, then allow password reset.
+
+Clear token after use
+ */
+export class ResetpasswordFormComponent implements OnInit {
+  @Input() suemail: string | null = null;
+  @Input() password: string | null = null;
+  @Input() confirmPassword: string | null = null;
+  data:any;
+  user:ResetUser = {
+    password:'',
+    confirmpswd:'',
+    tokenUrl:''
+  }
+  captchaReady = true; // assume ready (for mock up to integrate )
+  captchaToken: string = '';
+  tokenFromUrl: string ='';
+  resetpassForm:  FormGroup;
+  showPassword: boolean = false;
+  showConfirmPassword: boolean=false;
+  passwordTouched =false;
+  isSuccess=false;
+  message: string = '';
+  loading =false; //see verify logic for implementation if required
+
+  passwordRules = {
+    lengthValid: false,
+    containsLetter: false,
+    containsNumber: false,
+    noSpecialsOrSpaces: false
+  };
+
+
+  constructor(private fb:FormBuilder, private userService:UserService, private recaptchaV3Service: ReCaptchaV3Service, private route:ActivatedRoute){
+    this.resetpassForm = this.fb.group({
+        password: ['', [Validators.required, this.passwordStrengthValidator]],
+        confirmPassword: ['', Validators.required],
+      },{
+        validators: this.passwordMatchValidator
+      });
+
+  }
+
+  ngOnInit(){
+    this.route.queryParams.subscribe(params => {
+      const tokenParam = params['token'];
+
+      if ( tokenParam) {
+        // Set email field
+        // Store token securely (maybe in a class variable)
+        this.tokenFromUrl = tokenParam;
+      }
+    });
+    //initialize subscriber to password field
+    this.resetpassForm.get('password')?.valueChanges.subscribe(password => {
+      this.passwordTouched = password.length > 0;
+      //this.updatePasswordRules(value || '');
+      this.passwordRules.lengthValid = password.length >= 8 && password.length <= 20;
+      this.passwordRules.containsLetter = /[A-Za-z]/.test(password);
+      this.passwordRules.containsNumber = /[0-9]/.test(password);
+      this.passwordRules.noSpecialsOrSpaces = /^[A-Za-z0-9]+$/.test(password);
+  
+    });
+
+  }
+  passwordMatchValidator(form: FormGroup) {
+    const password = form.get('password')?.value;
+    const confirm = form.get('confirmPassword')?.value;
+    return password === confirm ? null : { passwordMismatch: true };
+  }
+
+  passwordStrengthValidator(control: AbstractControl): ValidationErrors | null {
+    const password = control.value;
+
+    if (!password) return null;
+
+    const lengthValid = password.length >= 8 && password.length <= 20;
+    const containsLetter = /[A-Za-z]/.test(password);
+    const containsNumber = /[0-9]/.test(password);
+    const noSpecialsOrSpaces = /^[A-Za-z0-9]+$/.test(password);
+
+    const valid = lengthValid && containsLetter && containsNumber && noSpecialsOrSpaces;
+
+    return valid ? null : { passwordStrength: true };
+  }
+//not used moved to onInit
+  updatePasswordRules(password: string): void {
+    this.passwordRules.lengthValid = password.length >= 8 && password.length <= 20;
+    this.passwordRules.containsLetter = /[A-Za-z]/.test(password);
+    this.passwordRules.containsNumber = /[0-9]/.test(password);
+    this.passwordRules.noSpecialsOrSpaces = /^[A-Za-z0-9]+$/.test(password);
+  }
+
+  onSubmit(){
+   
+    if (this.resetpassForm.invalid) {
+         // Mark all controls as touched to trigger validation display
+         this.resetpassForm.markAllAsTouched();
+         return;
+       }
+      //this.isSuccess =false;
+      //this.message = 'Resetting please wait...';
+
+      this.recaptchaV3Service.execute('newpasswordreset').subscribe({
+        next: (token) => {
+           this.captchaToken = token;
+           const formValues = this.resetpassForm.value;
+           const userAccount:ResetUser = {
+               password:formValues.password,
+               confirmpswd: formValues.confirmPassword,
+               tokenUrl: this.tokenFromUrl || ''
+           }
+           
+           this.message= 'Sending a reset please wait...';
+           
+           this.resetUser(userAccount, token);
+         // Proceed with useracount —  could be submitted to server here
+           console.log('✅ Form is valid. Proceeding to account view..');
+           //need to validate the email / passwords to == themselves. which we can get from the promo code on how to implement for autoupdates 
+           console.log("userAccount Submitted:", userAccount);
+        },
+       error:(err) =>{
+           console.error('reCaptcha error',err);
+       }
+      
+
+    });
+  }
+
+  async resetUser(userAccount:ResetUser, token:string){
+    this.loading=true;
+    try{
+            
+          // Send `token` to backend for verification
+         //console.log('CAPTCHA token:', token);
+          // Construct your payload
+          const payload = {
+            password:userAccount.password,
+            confirmPassword: userAccount.confirmpswd,
+            tokenUrl: userAccount.tokenUrl,
+            token: token
+          };
+          // the real url endpoint
+          const url ='https://crystalhansenartographic.com/api/index-users.php/users/resetnewpass';
+    
+          const response = await this.userService.postData(url, payload);
+    
+          console.log('Backend response:', response);
+          this.data = response;
+        //Backend response: {success: true, message: 'Your password has been reset!'}
+        // append a message to the div response.  see verify response
+        //  This is a do nothing logic exit for user 'ok' from alert and can style alertbox to look like a modal
+        // and then redirect to login page
+
+          this.message = response.message || 'Verification successful!';
+          this.isSuccess = response.success;
+          
+        }catch(error){
+            console.error('Failed to load data in componenet', error);
+        }finally{
+          this.loading=false;
+        }
+  }
+
+}

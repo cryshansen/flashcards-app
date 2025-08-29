@@ -103,5 +103,112 @@
     "answer": "<code>==</code> <u>compares</u> <strong>object references</strong>; <code>.equals()</code> <u>compares</u> <strong>object content</strong>.",
     "difficulty": "easy",
     "color": "success"
+  },
+  {
+    "topic": "Java Basics",
+    "question": "What is the difference between final variable, object, and method?",
+    "answer": "<strong>final variable</strong> is immutable; <strong>final object</strong> reference is immutable but object can change; <strong>final method</strong> cannot be overridden.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java Basics",
+    "question": "What is an interface?",
+    "answer": "<strong>Interface</strong> <u>defines methods without implementation</u>; classes <u>implement</u> interfaces to provide behavior; example: <code>interface MyInterface { void doSomething(); }</code>",
+    "difficulty": "medium",
+    "color": "info"
+  },
+  {
+    "topic": "Java Basics",
+    "question": "Does an interface have only one method?",
+    "answer": "No, an interface can have multiple abstract methods. A <strong>functional interface</strong> has exactly one abstract method and can be used in lambda expressions.",
+    "difficulty": "medium",
+    "color": "primary"
+  },
+  {
+    "topic": "Java Basics",
+    "question": "What is an enum?",
+    "answer": "<strong>Enum</strong> <u>represents a fixed set of constants</u>; example: <code>enum Day { MONDAY, TUESDAY }</code>",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java Collections",
+    "question": "What is a List?",
+    "answer": "<strong>List</strong> <u>ordered collection</u> allowing duplicates; example: <code>List<String> list = new ArrayList<>();</code>",
+    "difficulty": "easy",
+    "color": "primary"
+  },
+  {
+    "topic": "Java Collections",
+    "question": "What is a Set?",
+    "answer": "<strong>Set</strong> <u>unordered collection</u> that <strong>does not allow duplicates</strong>; example: <code>Set<String> set = new HashSet<>();</code>",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java Collections",
+    "question": "What is a Map?",
+    "answer": "<strong>Map</strong> <u>stores key-value pairs</u> with unique keys; example: <code>Map<String,Integer> map = new HashMap<>();</code>",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java Loops",
+    "question": "Traditional For Loop",
+    "answer": "<strong>for</strong> loop <u>indexed iteration</u> over arrays or lists; example: <code>for(int i=0; i<n; i++)</code>",
+    "difficulty": "easy",
+    "color": "primary"
+  },
+  {
+    "topic": "Java Loops",
+    "question": "While Loop",
+    "answer": "<strong>while</strong> loop <u>executes while condition is true</u>; used when the number of iterations is unknown",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java Loops",
+    "question": "Do-While Loop",
+    "answer": "<strong>do-while</strong> loop <u>executes at least once</u>, then checks the condition; example: <code>do {...} while(condition);</code>",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java Loops",
+    "question": "Enhanced For Loop (For-Each)",
+    "answer": "<u>Iterates over collections or arrays without index</u>; example: <code>for(String s: list)</code>",
+    "difficulty": "easy",
+    "color": "info"
+  },
+  {
+    "topic": "Java Loops",
+    "question": "forEach Lambda",
+    "answer": "<u>One-line iteration using lambda expressions</u>; example: <code>list.forEach(System.out::println)</code>",
+    "difficulty": "medium",
+    "color": "success"
+  },
+  {
+    "topic": "Java Loops",
+    "question": "Streams API",
+    "answer": "<u>Functional style iteration</u> with optional transformations; example: <code>list.stream().forEach(System.out::println)</code>",
+    "difficulty": "hard",
+    "color": "danger"
+  },
+  {
+    "topic": "Java Basics",
+    "question": "What is the difference between `==` and `.equals()`?",
+    "answer": "<code>==</code> <u>compares</u> <strong>object references</strong>; <code>.equals()</code> <u>compares</u> <strong>object content</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Spring Boot",
+    "question": "What is the advantage of Spring Boot vs Spring Framework?",
+    "answer": "<strong>Spring Boot</strong> comes with <u>preconfigured defaults</u>, embedded servers, and opinionated setup to quickly create production-ready apps; Spring Framework requires more manual configuration.",
+    "difficulty": "medium",
+    "color": "info"
   }
+
+
 ]

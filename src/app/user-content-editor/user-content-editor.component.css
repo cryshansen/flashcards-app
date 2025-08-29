@@ -1,0 +1,76 @@
+blockquote {
+    border-left:none
+}
+
+.quote-badge {
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.2);   
+}
+
+.quote-box {
+    
+    overflow: hidden;
+    margin-top: 50px;
+    padding-top: -25px;
+    border-radius: 17px;
+    /*background-color: #4ADFCC;*/
+    color: white;
+    width: 325px;
+    box-shadow: 2px 2px 2px 2px #E0E0E0;
+    
+}
+
+.quotation-mark {
+    
+    margin-top: 10px;
+    font-weight: bold;
+    font-size:100px;
+    color: #4ADFCC;/* white;*/
+    font-family: "Times New Roman", Times, Serif;
+    
+}
+
+.quote-text {
+    
+    font-size: 19px;
+    margin-top: -50px;
+    margin-bottom: 50px;
+}
+
+.blog-post-bottom pull-right {
+  
+}
+
+.blockquote {
+  font-size: 1.25rem;
+  border: 1px solid rgba(222, 226, 230, 0.54);
+  /*border-left: 0.5rem solid rgba(0, 123, 255, 0.54);*/
+  color: #6c757d;
+  font-family: "Open Sans", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /*font-style: italic;*/
+  line-height: 1.6;
+  margin: 1.875rem auto;
+  max-width: 100%;
+  padding: 4.6875rem 1.875rem 1.875rem 4.6875rem;
+  position: relative;
+  width: 100%;
+}
+/*
+.blockquote:before {
+  font-size: 6.875rem;
+  color: rgba(0, 123, 255, 0.54);
+  content: "“";
+  font-family: "Noto Serif", "Georgia", "Times New Roman", "Times", serif;
+  font-size: 5.5rem;
+  height: 3.75rem;
+  left: 0.9375rem;
+  line-height: 1;
+  max-width: 3.75rem;
+  position: absolute;
+  text-align: inherit;
+  top: 0.9375rem;
+  width: 100%;
+}*/
+.blockquote:after {
+  content: "";
+}

@@ -1,0 +1,55 @@
+<!-- Right: Live Preview -->
+<div class="row"> 
+    <div class="col-md-6">
+        <h3 class="mt-3">Final Speech Output</h3>
+        <p class="text-muted">
+            This live preview shows <strong>speech cues</strong> 
+            ([pause], [longpause], [emphasize]) as they will NOT display in your flashcard  
+                to appear as expected  clean and neat. They will be contained separately for tts adjustments.
+        </p>
+        <div 
+            class="preview border rounded bg-light p-3 h-50" 
+            [innerHTML]="renderedContent">
+            <!-- Live visual preview -->
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <div class="m-2 p-2 border rounded">
+            <!-- <label>Choose a voice <button type="button" class="btn btn-secondary rounded-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Choose  a 'Google' voice for nicest natural voice"><fa-icon class="ms-3" [icon]="faCircleQuestion"></fa-icon> </button> </label>  -->
+            <label class="form-label">
+                Choose a voice
+                <span #tooltipIcon class="" id="voice-tooltip" data-bs-toggle="tooltip" data-bs-placement="top" title="Choose  a 'Google' voice for nicest natural voice">
+                    <fa-icon class="ms-3" [icon]="faCircleQuestion"></fa-icon>
+                </span>
+                </label>
+
+                
+            <button type="button" class="btn btn-outline-primary text-end" (click)="readContent()"> 🔊 Listen </button>
+            <div class="row tts-controls mt-5">
+                <div class="col-4 d-flex mb-3">
+                    <select class="form-select" (change)="onVoiceChange($event)">
+                    <option *ngFor="let voice of voices" [value]="voice.name">{{ voice.name }} ({{ voice.lang }})</option>
+                    </select>  
+
+                </div>
+                <!-- Rate slider -->
+                <div class="col-4 mb-3">
+                <label for="rate" class="form-label">Speed: {{ rate }}</label>
+                <input type="range" id="rate" class="form-range"
+                        min="0.5" max="2" step="0.1"
+                        [(ngModel)]="rate">
+                </div>
+
+                <!-- Pitch slider -->
+                <div class="col-4 mb-3">
+                <label for="pitch" class="form-label">Pitch: {{ pitch }}</label>
+                <input type="range" id="pitch" class="form-range"
+                        min="0" max="2" step="0.1"
+                        [(ngModel)]="pitch">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

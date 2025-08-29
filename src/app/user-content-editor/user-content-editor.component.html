@@ -1,0 +1,125 @@
+<div class="container my-5">
+    <app-guidelines-drawer #drawer></app-guidelines-drawer>
+  <h1 class="mb-4">Create Your Flashcards</h1>
+  <p class="fs-5 text-muted">
+    Enter your content below. Use the buttons to insert pauses or emphasize words for natural-sounding reading. Add memory cues based on the listings below
+  </p>
+
+  <!-- Text editor -->
+  <div class="row my-4">
+    <h2 class="mb-4">Try it Yourself.</h2>
+    <p class="lead text-mutted">Click your choice of formating, text for visual cues and tts (Text to speech) cues to automatically create your flashcard. </p>
+    <p>Example:</p> 
+    <p class="m-5 px-5">Welcome to [strong]FlashLearn[/strong], the app that helps you learn [em:effectively] and retain knowledge. [pause] Each flashcard highlights key [underline]terms[/underline] and [em]concepts[/em], so your brain can recognize patterns quickly. [pause] You can listen to your flashcards aloud at your preferred speed and pitch. [longpause] Remember to focus on [em:understanding] not just memorization. [pause] Syntax examples are displayed exactly as you would write them: [code]for (let i = 0; i < 10; i++)[/code]. [pause] Have fun experimenting with [strong]visual[/strong] and [em:audio] cues!</p>
+    <button type="button" class="btn btn-primary mb-3 w-25" (click)="drawer.open()">Show Guidelines</button>
+    <div class="row g-4">
+
+            <!-- Left: Editor -->
+            <div class="col-md-6">
+            <h3 class="mt-3">Build the Flashcard Text</h3>
+            <p class="text-muted">
+                Select text and choose a button — it will auto-wrap your choice.  
+                Note: <em>Emphasis (TTS)</em> will prompt you to enter the word.
+            </p>
+            <textarea 
+                class="form-control" 
+                rows="15"
+                [(ngModel)]="content"
+                (input)="updatePreview()"
+                [placeholder]="placeholderText">
+            </textarea>
+                <!-- Helper buttons -->
+
+        <h4 class="m-2">Insertable Cues</h4>
+        <!-- <button type="button" class="btn btn-outline-primary me-2" (click)="insertAtCursor('[pause]')">Insert Short Pause</button>
+        <button type="button" class="btn btn-outline-primary me-2" (click)="insertAtCursor('[longpause]')">Insert Long Pause</button>
+        <button type="button" class="btn btn-outline-primary me-2" (click)="insertEmphasis()">Emphasize Word</button> -->
+        <!-- Visual Grammar Cue buttons -->
+        <!--<button *ngFor="let cue of cues" class="btn btn-info" (click)="insertAtCursor(cue.tag)">
+            {{ cue.name }}
+        </button>
+    </div>-->
+        <ng-container *ngFor="let group of ['visual', 'tts']">
+            <div class="m-2 p-2 border rounded" [ngStyle]="{'background-color': group === 'visual' ? '#f8f9fa' : '#fff3cd'}">
+            <strong>{{ group === 'visual' ? 'Visual Grammar Cues' : 'TTS Cues' }}</strong>
+                <div class="d-flex flex-wrap gap-2 mt-2"n *ngIf="cues?.length">
+                    <button *ngFor="let cue of cues | filterByType:group"
+                            class="btn btn-sm"
+                            [ngStyle]="{'background-color': cue.color, 'color': '#fff'}" 
+                            (click)="insertAtCursor(cue.tag)"
+                            [title]="cue.description">
+                    {{ cue.name }}
+                    </button>
+                </div>
+            </div>
+        </ng-container>
+        <button class="col-4 m-2 p-2 btn btn-success" (click)="saveContent()">Save Flashcard</button>
+        <button type="button" class="col-4  m-2 p-2 btn btn-outline-danger me-2" (click)="clearContent()">Clear</button>
+         
+            </div>
+
+            <!-- Right: Live Preview -->
+            <div class="col-md-6">
+                <h3 class="mt-3">Final Visual Output</h3>
+                <p class="text-muted">
+                    This live preview shows <strong>visual cues</strong> 
+                    ([strong], [underline], [em], [code]) as they will display in your flashcard  
+                     to appear as expected  clean and neat. 
+                </p>
+
+                <div 
+                    class="preview border rounded bg-light p-3 h-50" 
+                    [innerHTML]="renderedContent">
+                    <!-- Live visual preview -->
+                </div>
+                <div class="m-2 p-2 border rounded">
+                   <!-- <label>Choose a voice <button type="button" class="btn btn-secondary rounded-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Choose  a 'Google' voice for nicest natural voice"><fa-icon class="ms-3" [icon]="faCircleQuestion"></fa-icon> </button> </label>  -->
+                    <label class="form-label">
+                        Choose a voice
+                        <span #tooltipIcon class="" id="voice-tooltip" data-bs-toggle="tooltip" data-bs-placement="top" title="Choose  a 'Google' voice for nicest natural voice">
+                            <fa-icon class="ms-3" [icon]="faCircleQuestion"></fa-icon>
+                        </span>
+                        </label>
+
+                        
+                    <button type="button" class="btn btn-outline-primary text-end" (click)="readContent()"> 🔊 Listen </button>
+                    <div class="row tts-controls mt-5">
+                        <div class="col-4 d-flex mb-3">
+                            <select class="form-select" (change)="onVoiceChange($event)">
+                            <option *ngFor="let voice of voices" [value]="voice.name">{{ voice.name }} ({{ voice.lang }})</option>
+                            </select>  
+
+                        </div>
+                        <!-- Rate slider -->
+                        <div class="col-4 mb-3">
+                        <label for="rate" class="form-label">Speed: {{ rate }}</label>
+                        <input type="range" id="rate" class="form-range"
+                                min="0.5" max="2" step="0.1"
+                                [(ngModel)]="rate">
+                        </div>
+
+                        <!-- Pitch slider -->
+                        <div class="col-4 mb-3">
+                        <label for="pitch" class="form-label">Pitch: {{ pitch }}</label>
+                        <input type="range" id="pitch" class="form-range"
+                                min="0" max="2" step="0.1"
+                                [(ngModel)]="pitch">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+</div>
+
+
+</div>
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipTriggrtList = document.getElementById("voice-tooltip");
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+</script>

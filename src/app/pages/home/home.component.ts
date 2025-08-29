@@ -1,54 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { FlashcardService } from '../../services/flashcard.service';
-import { Flashcard } from '../../models/flashcard';
-import { FlashcardComponent } from '../../components/flashcard/flashcard.component';
-
+import { LandingSectionComponent } from '../../landing-section/landing-section.component';
+import { HowworksComponent } from '../../howworks/howworks.component';
+import { ContactModalService } from '../../services/contact-modal.service';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
   standalone: true,
   selector: 'app-home',
-  imports: [CommonModule,FormsModule,FlashcardComponent],
+  imports: [CommonModule,LandingSectionComponent, HowworksComponent,RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
-  topics = ['Angular','React','Spring', 'Java'];
-  selectedDataset: string = 'React';
-  flashcards: Flashcard[] = [];
-  selectedTopic: string = 'All';
-  selectedDifficulty: string = 'All';
-
-
-  constructor(private flashcardService: FlashcardService) {}
-
-  ngOnInit(): void {
-    this.loadFlashcards();
+export class HomeComponent  {
+  showContact = false;
+  constructor(private contactModalS:ContactModalService){}
+  openModal(){
+    this.showContact = true;
+    this.contactModalS.open();
   }
-
-  loadFlashcards(): void {
-    this.flashcardService.getFlashcards(this.selectedDataset).subscribe(data => {
-      this.flashcards = data;
-      this.selectedTopic = 'All'; // Reset topic filter
-    });
-  }
-
-  get topicFilters(): string[] {
-    const allTopics = this.flashcards.map(card => card.topic);
-    return ['All', ...Array.from(new Set(allTopics))];
-  }
-  get difficultyLevels(): string[] {
-    return ['All', 'easy', 'medium', 'hard'];
-  }
-
-  filteredCards(): Flashcard[] {
-    /*return this.selectedTopic === 'All'
-      ? this.flashcards
-      : this.flashcards.filter(card => card.topic === this.selectedTopic);*/
-      return this.flashcards.filter(card => {
-        const matchesTopic = this.selectedTopic === 'All' || card.topic === this.selectedTopic;
-        const matchesDifficulty = this.selectedDifficulty === 'All' || card.difficulty === this.selectedDifficulty;
-        return matchesTopic && matchesDifficulty;
-      });
-  }
+  closeModal(){this.showContact = false; this.contactModalS.close();}
 }

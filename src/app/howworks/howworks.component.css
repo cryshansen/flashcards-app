@@ -1,0 +1,28 @@
+/* Indicators (dots) */
+.carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #007bff; /* Bootstrap primary */
+}
+
+.carousel-indicators .active {
+  background-color: #0056b3; /* darker blue */
+}
+
+/* Arrows (controls) */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%); /* makes them visible on light bg */
+  width: 2rem;
+  height: 2rem;
+}
+.carousel-item {
+  min-height: 400px; /* adjust to your tallest card */
+}
+
+.carousel-item .card {
+  height: 100%;
+  /*min-height: 400px; /* adjust to your tallest card */
+}
+
