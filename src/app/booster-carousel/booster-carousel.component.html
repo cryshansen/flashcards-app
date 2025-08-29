@@ -14,26 +14,34 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only"></span>
   </a>
-  <div class="tts-controls mt-5" style="z-index:25; position:relative;">
-    <select (change)="onVoiceChange($event)">
-      <option *ngFor="let voice of voices" [value]="voice.name">{{ voice.name }} ({{ voice.lang }})</option>
-    </select>
-    <!-- Rate slider -->
-    <div class="mb-3">
-      <label for="rate" class="form-label">Speed: {{ rate }}</label>
-      <input type="range" id="rate" class="form-range"
-            min="0.5" max="2" step="0.1"
-            [(ngModel)]="rate">
+  <div class="container flex">
+      <div class="row tts-controls mt-5" style="z-index:25; position:relative;">
+        <div class="col-4">
+          <select (change)="onVoiceChange($event)">
+            <option *ngFor="let voice of voices" [value]="voice.name">{{ voice.name }} ({{ voice.lang }})</option>
+          </select>
+        </div>
+        <!-- Rate slider -->
+        <div class="col-4">
+            <div class="mb-3">
+              <label for="rate" class="form-label">Speed: {{ rate }}</label>
+              <input type="range" id="rate" class="form-range"
+                    min="0.5" max="2" step="0.1"
+                    [(ngModel)]="rate">
+            </div>
+          </div>
+        <!-- Pitch slider -->
+        <div class="col-4">
+            <div class="mb-3">
+              <label for="pitch" class="form-label">Pitch: {{ pitch }}</label>
+              <input type="range" id="pitch" class="form-range"
+                    min="0" max="2" step="0.1"
+                    [(ngModel)]="pitch">
+            </div>
+          </div>
+        
+      </div>
+      <button (click)="readSlide(currentIndex)">🔊 Read This Slide</button>
+        <button (click)="readAllSlides()">🎧 Read All Slides</button>
     </div>
-
-    <!-- Pitch slider -->
-    <div class="mb-3">
-      <label for="pitch" class="form-label">Pitch: {{ pitch }}</label>
-      <input type="range" id="pitch" class="form-range"
-            min="0" max="2" step="0.1"
-            [(ngModel)]="pitch">
-    </div>
-    <button (click)="readSlide(currentIndex)">🔊 Read This Slide</button>
-    <button (click)="readAllSlides()">🎧 Read All Slides</button>
-  </div>
 </div>

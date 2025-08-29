@@ -22,7 +22,7 @@ export interface Cue  {
 }
 
 /**
- * DONOT DELETE!!! valuable functionality can use elsewhere
+ * DONOT DELETE!!! valuable functionality can
  * This is an exploration PROTOTYPE page component to get the flashcard input worked out as a prototype and now we are splitting it up to a smooth user testing workflow style for ease of use. modern and fresh into components refer to workflow-wizzard
  */
 @Component({

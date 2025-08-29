@@ -14,7 +14,7 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
 import { ResetpasswordFormComponent } from './resetpassword-form/resetpassword-form.component';
 import { MindmapComponent } from './mindmap/mindmap.component';
 import { UserContentEditorComponent } from './user-content-editor/user-content-editor.component';
-//import { WorkflowComponent } from './workflow/workflow.component';
+import { BoostPuzzlesComponent } from './boost-puzzles/boost-puzzles.component';
 import { WorkflowWizzardComponent } from './workflow-wizzard/workflow-wizzard.component';
 
 export const routes: Routes = [
@@ -25,6 +25,7 @@ export const routes: Routes = [
   { path: 'whiteboard', component: WhiteboardComponent },
   { path: 'elevator', component: ElevatorComponent },
   { path: 'booster', component:BoosterComponent},
+  { path:'boost-puzzles', component:BoostPuzzlesComponent},
   { path: 'about', component:AboutComponent},
   { path: 'project', component:ProjectComponent},
   { path: 'mindmap', component: MindmapComponent},
@@ -32,7 +33,7 @@ export const routes: Routes = [
   { path: 'signin', component:SigninComponent} ,
   { path: 'passwordreset', component:ResetpasswordComponent} ,
   { path: 'resetpassword', component:ResetpasswordFormComponent} ,
-  { path:'user-content-editor', component:UserContentEditorComponent},
+  { path:'try-editor', component:UserContentEditorComponent},
   { path:'workflow', component:WorkflowWizzardComponent },
   { path: '', component:ContactModalComponent}
 

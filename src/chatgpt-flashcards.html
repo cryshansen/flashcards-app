@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flashcards Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .quiz-container {
+      width: 600px;
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    .choices {
+      list-style: none;
+      padding: 0;
+    }
+    .choices li {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .choices li:hover {
+      background: #f0f0f0;
+    }
+    .choices li.correct {
+      background: #c8e6c9;
+      border-color: #388e3c;
+      color: #388e3c;
+    }
+    .choices li.incorrect {
+      background: #ffcdd2;
+      border-color: #d32f2f;
+      color: #d32f2f;
+    }
+    .result {
+      display: none;
+      text-align: center;
+    }
+    .result h2 {
+      margin: 0;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #2196f3;
+      color: white;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #1976d2;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <div id="quiz"></div>
+    <div class="result" id="result">
+      <h2>Your Score: <span id="score"></span>/<span id="total"></span></h2>
+      <button onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+  </div>
+
+  <script>
+    const flashcards = [
+      {
+        question: "Why are all steps showing on top of each other in Angular workflow?",
+        choices: [
+          "Because Angular animations are not triggered",
+          "Because all ng-templates are the same reference",
+          "Because [class.active] is not applied",
+          "Because CSS display property is not handled"
+        ],
+        correct: 1
+      },
+      {
+        question: "Why are step templates showing below the workflow loop?",
+        choices: [
+          "Because ng-template tags are not hidden by default",
+          "Because you need *ngIf to hide them",
+          "Because template references cannot be used",
+          "Because Angular animations don't hide elements"
+        ],
+        correct: 0
+      },
+      {
+        question: "How can you avoid repeating many *ngIf blocks when rendering step templates?",
+        choices: [
+          "By hardcoding all templates",
+          "By storing TemplateRefs in an array and looping",
+          "By creating separate components",
+          "By using only one template"
+        ],
+        correct: 1
+      },
+      {
+        question: "How did the user fix the overlapping Angular workflow steps?",
+        choices: [
+          "By removing animations",
+          "By using *ngIf",
+          "By adding [class.inactive] with CSS display:none",
+          "By rewriting all templates"
+        ],
+        correct: 2
+      }
+    ];
+
+    let current = 0;
+    let score = 0;
+
+    function renderQuiz() {
+      const quizEl = document.getElementById("quiz");
+      const resultEl = document.getElementById("result");
+      quizEl.innerHTML = "";
+      resultEl.style.display = "none";
+      score = 0;
+
+      flashcards.forEach((card, index) => {
+        const cardEl = document.createElement("div");
+        cardEl.className = "card";
+        cardEl.innerHTML = `
+          <h3>Q${index + 1}: ${card.question}</h3>
+          <ul class="choices">
+            ${card.choices.map((choice, i) => `<li data-index="${i}">${choice}</li>`).join("")}
+          </ul>
+        `;
+        quizEl.appendChild(cardEl);
+
+        const choices = cardEl.querySelectorAll("li");
+        choices.forEach(choiceEl => {
+          choiceEl.addEventListener("click", () => {
+            const selected = parseInt(choiceEl.getAttribute("data-index"));
+            if (selected === card.correct) {
+              choiceEl.classList.add("correct");
+              score++;
+            } else {
+              choiceEl.classList.add("incorrect");
+              choices[card.correct].classList.add("correct");
+            }
+            // disable all after answer
+            choices.forEach(c => c.style.pointerEvents = "none");
+
+            if (index === flashcards.length - 1) {
+              showResult();
+            }
+          });
+        });
+      });
+    }
+
+    function showResult() {
+      document.getElementById("quiz").style.display = "none";
+      document.getElementById("result").style.display = "block";
+      document.getElementById("score").textContent = score;
+      document.getElementById("total").textContent = flashcards.length;
+    }
+
+    function restartQuiz() {
+      document.getElementById("quiz").style.display = "block";
+      renderQuiz();
+    }
+
+    renderQuiz();
+  </script>
+</body>
+</html>

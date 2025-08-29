@@ -52,15 +52,17 @@
                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
                     <div class="dropdown-menu fade-up m-0" aria-labelledby="productsDropdown">
-                        <a routerLink="/flashcard" class="nav-link"   class="dropdown-item">Flashcards</a>
+                        <a routerLink="/flashcard" class="nav-link" class="dropdown-item">Flashcards</a>
+                        <a routerLink="/interview" class="nav-link" class="dropdown-item">Interviews</a>
                         <a routerLink="/whiteboard" class="dropdown-item">Whiteboard</a>
                         <a routerLink="/booster" class="dropdown-item">Boost</a>
                         <a routerLink="/elevator" class="dropdown-item">Elevate</a>
+                        <a routerLink="/boost-puzzles" class="dropdown-item">Puzzles</a>
                     </div>
                 </div>
                 <a href="#" (click)="openModal($event)" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="user-content-editor" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block nav-item ">Try Now <fa-icon class="ms-3" [icon]="faArrowRight"></fa-icon></a>
+            <a href="try-editor" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block nav-item ">Try Now <fa-icon class="ms-3" [icon]="faArrowRight"></fa-icon></a>
         </div>
     </nav>
 </div>
@@ -123,5 +125,5 @@
 <!-- CTA Footer -->
 <section class="container text-center my-5" *ngIf="showBottomContent">
   <h3 class="my-5 py-5">Ready to boost your learning?</h3>
-  <button class="btn btn-success btn-lg m-2" routerLink="/user-content-editor">Try Flashcards Free</button>
+  <button class="btn btn-success btn-lg m-2" routerLink="/try-editor">Try Flashcards Free</button>
 </section>

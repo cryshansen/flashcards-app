@@ -1,80 +1,90 @@
 <div class="container">
+    <h2 class="mb-5">Sell Ideas faster and better</h2>
     <div class="row my-5">
-        <h2>🎤 Elevator Pitch (30–45 seconds)</h2>
+        <h3 class="mb-5">🎤 Elevator Pitch (30–45 seconds)</h3>
 
-        <p>Hi, thanks for having me today. I'm a full-stack developer with over 18 years of experience building enterprise applications using Java, Angular, and modern cloud technologies like Azure. I specialize in developing scalable REST APIs with Spring Boot and delivering responsive front-end experiences with Angular and Bootstrap.</p>
+        <p class="px-5">Hi, thanks for having me today. I'm a full-stack developer with over 18 years of experience building enterprise applications using Java, Angular, and modern cloud technologies like Azure. I specialize in developing scalable REST APIs with Spring Boot and delivering responsive front-end experiences with Angular and Bootstrap.</p>
 
-        <p>I've worked across the full SDLC — from writing CI/CD pipelines in Jenkins to integrating with data pipelines using Kafka and working with databases like SQL Server and MongoDB. I'm also comfortable working in Python for scripting or data processing needs.</p>
+        <p class="px-5">I've worked across the full SDLC — from writing CI/CD pipelines in Jenkins to integrating with data pipelines using Kafka and working with databases like SQL Server and MongoDB. I'm also comfortable working in Python for scripting or data processing needs.</p>
 
-        <p>Beyond coding, I value clean architecture, strong documentation, and clear communication — especially when collaborating with stakeholders or cross-functional teams. I'm excited about the opportunity to bring that blend of technical depth and team collaboration to your organization."</p>
+        <p class="px-5">Beyond coding, I value clean architecture, strong documentation, and clear communication — especially when collaborating with stakeholders or cross-functional teams. I'm excited about the opportunity to bring that blend of technical depth and team collaboration to your organization."</p>
+    </div>
+
+    <div class="row my-5">
+        <h3 class="mb-5">Describe projects, products or roles.</h3>
+        <div class="card mb-3">
+            <div class="card-body">
+              <div class="card-title">
+                <h4 class="card-title"> ✅ 1. Tell me about a time you built a full-stack application.</h4>
+              </div>
+              <div class="card-body">
+                    <p class=""><strong>SITUATION:</strong> At my previous role, we were tasked with building a customer onboarding portal for internal staff to manage user profiles and services.</p>
+                    <p class=""><strong>TASK:</strong>I was responsible for designing and implementing the full-stack solution using Java (Spring Boot) for the backend and Angular for the frontend.</p>
+                    <p class=""><strong>ACTION:</strong> I designed RESTful APIs for user and service management, implemented authentication, and integrated with a SQL Server database. On the frontend, I used Angular with Bootstrap for responsive UI and form validations. I also worked with the DevOps team to create a Jenkins CI/CD pipeline for automated testing and deployment to Azure.</p>
+                    <p class=""><strong>RESULT:</strong>The application was delivered ahead of schedule, improved onboarding efficiency by 40%, and reduced manual errors significantly.</p>
+                </div>
+            </div>
+          </div> 
+    </div> 
+    
+    <div class="row my-5">
+        <div class="card mb-3">
+            <div class="card-body">
+              <div class="card-title">
+                    <h4 class="card-title"> ✅ 2. Describe a time you used Azure in a project.</h4>
+                </div>
+
+                 <div class="card-body">
+                        <p class=""><strong>SITUATION:</strong> Our team was migrating a monolithic on-premise application to a cloud-native architecture on Azure.</p>
+                        <p class=""><strong>TASK:</strong> I needed to ensure our services were scalable and secure, and that deployments were streamlined via Azure DevOps.</p>
+                        <p class=""><strong>ACTION:</strong> I containerized services using Docker, deployed them to Azure App Services, stored secrets in Key Vault, and set up Azure DevOps pipelines for CI/CD. I also configured health checks and logging with Azure Monitor.</p>
+                        <p class=""><strong>RESULT:</strong> Post-migration, the app's uptime improved to 99.9%, and deployments that once took hours were reduced to under 10 minutes.</p>                       
+                </div>
+            </div>  
+        </div> 
+    </div> 
+    <div class="row my-5">
+        <div class="card mb-3">
+            <div class="card-body">
+              <div class="card-title">
+                    <h4 class="card-title">✅ 3. Tell me about a challenge you faced with a CI/CD pipeline.</h4>
+                </div>
+                <div id="" class="card-body">
+                    <p class=""><strong>SITUATION:</strong> During a production release, our Jenkins pipeline failed because of a missing artifact version in Nexus.</p>
+                    <p class=""><strong>TASK:</strong> We needed a reliable fix to prevent future failures and ensure consistent delivery.</p>
+                    <p><strong>ACTION:</strong> I modified the Jenkinsfile to validate artifact availability before proceeding with deployment. I also introduced a fallback mechanism to use the latest stable build if a tagged release was unavailable, and documented the fix in Confluence.</p>
+                    <p class=""><strong>RESULT:</strong> This reduced release failures by 90% and significantly boosted confidence in our deployment process.</p>
+                 </div>    
+             </div>
+        </div>  
+    </div> 
+    <div class="row my-5">
+     <div class="card mb-3">
+            <div class="card-body">
+              <div class="card-title">
+                    <h4 class="card-title">✅ 4. Have you worked with data pipelines or queuing systems?</h4>
+                </div>
+                <div id="" class="card-body">
+                    <p class=""><strong>SITUATION:</strong> We had a requirement to process large volumes of transaction data in real-time from multiple sources.</p>
+                    <p class=""><strong>TASK:</strong> I was responsible for setting up a robust data ingestion pipeline using Kafka.</p>
+                    <p class=""><strong>ACTION:</strong> I designed producers to publish transactional data, and implemented consumers that validated, transformed, and wrote the data into MongoDB and SQL Server. I also handled retry mechanisms and dead-letter queues for fault tolerance.</p>
+                    <p class=""><strong>RESULT:</strong> The system could process over 10,000 messages per second and became a foundational part of our data platform.</p>
+                </div>    
+            </div>  
+        </div> 
     </div>
     <div class="row my-5">
-        <h4>✅ 1. Tell me about a time you built a full-stack application.</h4>
-        <p class="lead">SITUATION:</p>
-        <p>At my previous role, we were tasked with building a customer onboarding portal for internal staff to manage user profiles and services.</p>
-
-        <p class="lead">TASK:</p>
-        <p>I was responsible for designing and implementing the full-stack solution using Java (Spring Boot) for the backend and Angular for the frontend.</p>
-        <p class="lead">ACTION:</p>
-        <p>I designed RESTful APIs for user and service management, implemented authentication, and integrated with a SQL Server database. On the frontend, I used Angular with Bootstrap for responsive UI and form validations. I also worked with the DevOps team to create a Jenkins CI/CD pipeline for automated testing and deployment to Azure.</p>
-
-        <p class="lead">RESULT:</p>
-        <p>The application was delivered ahead of schedule, improved onboarding efficiency by 40%, and reduced manual errors significantly.</p>
-    </div>    
-    <div class="row my-5">
-        <h4>✅ 2. Describe a time you used Azure in a project.</h4>
-        <p class="lead">SITUATION:</p>
-        <p>Our team was migrating a monolithic on-premise application to a cloud-native architecture on Azure.</p>
-
-        <p class="lead">TASK:</p>
-        <p>I needed to ensure our services were scalable and secure, and that deployments were streamlined via Azure DevOps.</p>
-
-        <p class="lead">ACTION:</p>
-        <p>I containerized services using Docker, deployed them to Azure App Services, stored secrets in Key Vault, and set up Azure DevOps pipelines for CI/CD. I also configured health checks and logging with Azure Monitor.</p>
-
-        <p class="lead">RESULT:</p>
-        <p>Post-migration, the app's uptime improved to 99.9%, and deployments that once took hours were reduced to under 10 minutes.</p>
-    </div>    
-    <div class="row my-5">
-        <h4>✅ 3. Tell me about a challenge you faced with a CI/CD pipeline.</h4>
-        <p class="lead">SITUATION:</p>
-        <p>During a production release, our Jenkins pipeline failed because of a missing artifact version in Nexus.</p>
-
-        <p class="lead">TASK:</p>
-        <p>We needed a reliable fix to prevent future failures and ensure consistent delivery.</p>
-
-        ACTION:
-        <p>I modified the Jenkinsfile to validate artifact availability before proceeding with deployment. I also introduced a fallback mechanism to use the latest stable build if a tagged release was unavailable, and documented the fix in Confluence.</p>
-
-        <p class="lead">RESULT:</p>
-        <p>This reduced release failures by 90% and significantly boosted confidence in our deployment process.</p>
-    </div>    
-    <div class="row my-5">
-        <h4>✅ 4. Have you worked with data pipelines or queuing systems?</h4>
-        <p class="lead">SITUATION:</p>
-        <p>We had a requirement to process large volumes of transaction data in real-time from multiple sources.</p>
-
-        <p class="lead">TASK:</p>
-        <p>I was responsible for setting up a robust data ingestion pipeline using Kafka.</p>
-
-        <p class="lead">ACTION:</p>
-        <p>I designed producers to publish transactional data, and implemented consumers that validated, transformed, and wrote the data into MongoDB and SQL Server. I also handled retry mechanisms and dead-letter queues for fault tolerance.</p>
-
-        <p class="lead">RESULT:</p>
-        <p>The system could process over 10,000 messages per second and became a foundational part of our data platform.</p>
+        <div class="card mb-3">
+            <div class="card-body">
+              <div class="card-title">
+                    <h4 class="card-title">✅ 5. Tell me about a time you had to explain a technical solution to a non-technical stakeholder.</h4>
+                </div>
+                <div  class="card-body">
+                    <p class=""><strong>SITUATION:</strong> We had to justify our decision to refactor a legacy system instead of rebuilding it entirely.</p>
+                    <p class=""><strong>TASK:</strong> I needed to present the technical debt and long-term costs in a way that the product owner and business team could understand.</p>
+                    <p class=""><strong>ACTION:</strong> I used diagrams and analogies (like maintaining vs. replacing a car engine), explained risk factors, and showed a phased plan with timelines and cost benefits of refactoring.</p>
+                    <p class=""><strong>RESULT:</strong> The stakeholders agreed to the refactor strategy, and we successfully modernized the system without major disruption.</p>
+                </div>
+            </div>  
+        </div> 
     </div>
-    <div class="row my-5">
-        <h4>✅ 5. Tell me about a time you had to explain a technical solution to a non-technical stakeholder.</h4>
-        <p class="lead">SITUATION:</p>
-        <p>We had to justify our decision to refactor a legacy system instead of rebuilding it entirely.</p>
-
-        <p class="lead">TASK:</p>
-        <p>I needed to present the technical debt and long-term costs in a way that the product owner and business team could understand.</p>
-
-        <p class="lead">ACTION:</p>
-        <p>I used diagrams and analogies (like maintaining vs. replacing a car engine), explained risk factors, and showed a phased plan with timelines and cost benefits of refactoring.</p>
-
-        <p class="lead">RESULT:</p>
-        <p>The stakeholders agreed to the refactor strategy, and we successfully modernized the system without major disruption.</p>
-    </div>
-</div>

@@ -1,0 +1,14 @@
+<div class="container my-5 py-5">
+    <h1 class="text-2xl font-bold mb-4">Free Puzzle Books</h1>
+    <div class="flex flex-col gap-3">
+    <button *ngFor="let topic of topics" class="p-2 border rounded hover:bg-gray-100 text-left"
+            (click)="selectBook(topic)">{{topic}}
+    </button>
+
+    </div>
+
+    <!-- Book viewer updates dynamically -->
+    <div *ngIf="selectedBook">
+    <app-book-viewer [bookData]="selectedBook"></app-book-viewer>
+    </div>
+</div>

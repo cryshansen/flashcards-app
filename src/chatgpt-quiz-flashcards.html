@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Flashcards</title>
+  <link type="stylesheet"> <!-- need boostrap 5 for the bottom product layout-->
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .flashcard { border: 1px solid #ccc; border-radius: 8px; padding: 16px; margin-bottom: 20px; }
+    .question { font-weight: bold; margin-bottom: 10px; }
+    .choices { list-style-type: none; padding: 0; }
+    .choices li { margin: 6px 0; }
+    .answer { margin-top: 10px; color: green; font-weight: bold; }
+
+    * {
+            box-sizing: border-box;
+        }
+
+        .details-card {
+            width: 80%;
+            margin: auto;
+        }
+
+
+        .description-container {
+            position: relative;
+            /* height: 900px; */
+        }
+
+        .main-description1 {
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        .main-description h3 {
+            font-size: 2rem;
+        }
+
+        .add-inputs,
+        .add-inputs input {
+            float: left;
+            margin-right: 10px;
+            margin-bottom: 2px;
+        }
+
+        .add-inputs button {
+            border-radius: 0;
+        }
+
+        .add-inputs input {
+            height: 48px;
+            width: 65px;
+            border-radius: 0;
+        }
+
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+        }
+
+        .social-list {
+            padding: 0;
+            list-style: none;
+        }
+
+        .social-list li {
+            float: left;
+            padding: 6px 8px;
+            margin-right: 12px;
+        }
+
+        .social-list li a {
+            color: black;
+            font-size: 2rem;
+        }
+
+        .social-list li a i {
+            font-size: 2rem;
+        }
+  </style>
+</head>
+<body>
+
+  <div class="flashcard">
+    <div class="question">How do you share data between child components in Angular?</div>
+    <ul class="choices">
+      <li>Use @Input and @Output ✅</li>
+      <li>Use CSS classes</li>
+      <li>Use Angular Pipes</li>
+      <li>Use Services only</li>
+    </ul>
+    <div class="answer">Correct: Use @Input and @Output</div>
+  </div>
+
+  <div class="flashcard">
+    <div class="question">What decorator in Angular lets a child receive data from a parent?</div>
+    <ul class="choices">
+      <li>@Inject</li>
+      <li>@Output</li>
+      <li>@Input ✅</li>
+      <li>@Bind</li>
+    </ul>
+    <div class="answer">Correct: @Input</div>
+  </div>
+
+  <div class="flashcard">
+    <div class="question">How can a child component send data back to the parent?</div>
+    <ul class="choices">
+      <li>@Child</li>
+      <li>@Parent</li>
+      <li>@Output with EventEmitter ✅</li>
+      <li>@Share</li>
+    </ul>
+    <div class="answer">Correct: @Output with EventEmitter</div>
+  </div>
+
+
+    <div class="container my-5">
+
+        <div class="card details-card p-0">
+            <div class="row">
+
+                <div class="col-md-6 col-sm-12">
+                    <img class="img-fluid details-img" src="https://source.unsplash.com/5Tm4YRqnNcM" alt="">
+                </div>
+                <div class="col-md-6 col-sm-12 description-container p-5">
+                    <div class="main-description">
+                        <p class="product-category mb-0">Graphite</p>
+                        <h3>iPhone 7 Graphite - 256GB</h3>
+                        <hr>
+                        <p class="product-price">$1199.00</p>
+                        <form class="add-inputs" method="post">
+                            <input type="number" class="form-control" id="cart_quantity" name="cart_quantity" value="1" min="1" max="10">
+                            <button name="add_to_cart" type="submit" class="btn btn-primary btn-lg">Add to cart</button>
+                        </form>
+                        <form class="add-inputs" method="post">
+                            <button name="add_to_cart" type="submit" class="btn btn-primary btn-lg">Add to Wishlist</button>
+                        </form>
+                        <div style="clear:both"></div>
+
+                        <hr>
+
+
+                        <p class="product-title mt-4 mb-1">About this product</p>
+                        <p class="product-description mb-4">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis assumenda voluptatem tempore dolor quod. Expedita, id, minus similique dolor sed adipisci aliquam natus amet doloremque delectus cupiditate? Sint, quasi, ad necessitatibus omnis quaerat tenetur corporis porro aut, natus ex ab id vel odit veniam fugiat temporibus aperiam quia rem minima!
+                        </p>
+
+                        <hr>
+
+                        <p class="product-title mt-4 mb-1">Share this product</p>
+                        <ul class="social-list">
+                            <li><a href="#"><i class="fa-brands fa-facebook"></a></i></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter"></a></i></li>
+                            <li><a href="#"><i class="fa-brands fa-square-instagram"></a></i></li>
+
+                        </ul>
+
+
+
+
+
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+            <!-- End row -->
+        </div>
+
+
+
+</body>
+</html>

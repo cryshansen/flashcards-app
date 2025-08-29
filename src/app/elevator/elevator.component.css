@@ -1,0 +1,10 @@
+ .flex-container {
+      display: flex;
+    }
+    .indent-space {
+      width: 30px; /* Adjust for desired indent */
+      flex-shrink: 0; /* Prevent shrinking */
+    }
+    .main-text {
+      flex-grow: 1; /* Allow text to take remaining space */
+    }
